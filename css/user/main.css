@@ -1,3 +1,168 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+*{
+	box-sizing:border-box;
+}
+body{
+    margin:auto;padding:0;
+	left:0;right:0;
+	text-align: center;
+    background: #000;
+}
+h1.heading{
+    text-decoration: underline;
+}
+.underline{
+    text-decoration: underline;
+}
+/**Fix for white space**/
+.row{
+	margin-right:0px;
+	margin-left:0px;
+}
+/** General CSS **/
+/** Links **/
+a:link {
+    color: #000;
+}
+/* visited link */
+a:visited {
+    color: #000;
+}
+/* mouse over link */
+a:hover {
+    color: #000;
+	text-decoration: none;
+}
+/** Properties **/
+.box-shadow{
+	box-shadow:0px 0px 4px #000;
+}
+.horizon-center{
+	margin:auto;
+	left:0; right:0;
+}
+.absolute-center{
+	position: absolute;
+	margin: auto;
+	left: 0; right: 0;
+	top: 0; bottom: 0;
+}
+.auto-center{
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+.row-centered{
+	text-align:center;
+}
+.col-centered{
+	display:inline-block;
+	float:none;
+	text-align:center;
+	margin-right:-4px;
+}
+.no-float{
+    float: none;
+}
+.no-padding{
+	padding: 0;
+}
+.padding-20{
+	padding: 20px;
+}
+.padding-sides-10{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.width-60{
+	width: 60% !important;
+}
+.btn-primary.btn-semi-transparent{
+	background: rgba(51,122,183,0.5);
+	border:3px solid rgba(51,122,183,1);
+	transition: 0.5s;
+}
+.btn-primary.btn-semi-transparent:hover,
+.btn-primary.btn-semi-transparent:active,
+.btn-primary.btn-semi-transparent:focus{
+	background: rgba(51,122,183,1);
+}
+
+.btn-danger.btn-semi-transparent{
+	background: rgba(169,68,66,0.5);
+	border:3px solid rgba(169,68,66,1);
+	transition: 0.5s;
+}
+.btn-danger.btn-semi-transparent:hover,
+.btn-danger.btn-semi-transparent:active,
+.btn-danger.btn-semi-transparent:focus{
+	background: rgba(169,68,66,1);
+}
+.background-overlay{
+	position: relative;
+	z-index: 1;
+}
+.background-overlay::before{
+	content: '';
+	position: absolute;
+	width:100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+	z-index: 0;
+	top: 0;
+	left: 0;
+}
+.background-overlay-20::before{
+	background: rgba(0,0,0,0.2);
+}
+.bottom-border{
+	display: inline-block;
+	position: relative;
+}
+.bottom-border:hover::after{
+	width:80%;
+}
+.bottom-border::after{
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom:-5px;
+	width:100%;
+	height: 5px;
+	border-radius: 5px;
+	background: #000;
+	transition:0.5s ease-in;
+}
+.bottom-border.center::after{
+	margin: auto;
+	left: 0; right: 0;
+}
+.bottom-border.bottom-border-40::after{
+	width: 40%;
+}
+.bottom-border.bottom-border-40:hover::after{
+	width:40%;
+}
+.bottom-border-danger::after{
+	background: #96281B;
+}
+.bottom-border-success::after{
+	background: rgba(51,122,183,1);
+}
+.bottom-border-white::after{
+	background: #FFF;
+}
+.hover-opacity{
+	opacity: 0.6;
+	transition: 0.5s;
+}
+.hover-opacity:hover{
+	opacity: 1;
+}
 /** Min Screen Size Overlay Styles **/
 .minScreenSizeOverlay{
 	position:fixed;
@@ -159,7 +324,7 @@ img.logo-sm{
     width: auto;
     height: auto;
     max-height:50px;
-    max-width: 100px; 
+    max-width: 100px;
 }
 img.logo-lg{
 	width: 300px;
@@ -297,7 +462,7 @@ img.logo-lg{
     top:0;
     z-index:4;
     width:inherit;
-   
+
 }
 **/
 #mainHeader #mainNav>div>.row{
@@ -333,7 +498,7 @@ img.logo-lg{
 	width: inherit;
 	box-shadow: none;
 	color: #FFF;
-	padding-top: 10px; 
+	padding-top: 10px;
 }
 #mainHeader.mainHeaderLayout1 .navbar li{
     float: left;
@@ -349,7 +514,7 @@ img.logo-lg{
 @media all and (max-width:767px){
 	#mainHeader.mainHeaderLayout1 .navbar-collapse{
 		background: rgba(255,255,255,0.9);
-	}	
+	}
 	#mainHeader.mainHeaderLayout1 .navbar li>a{
 		color: rgba(0,0,0,0.8);
 	}
@@ -362,7 +527,7 @@ img.logo-lg{
 section{
 	width: 100%;
 	margin: 0;
-    padding-bottom: 10px; 
+    padding-bottom: 10px;
 }
 section .container{
     width: inherit;
@@ -393,7 +558,7 @@ section .section-header{
     width: inherit;
 	height: 100vh;
     overflow: hidden;
-	margin-top:0; 
+	margin-top:0;
 }
 #home .container{
     padding: 0;
@@ -403,7 +568,7 @@ section .section-header{
 	color: #FFF;
 	height: 100vh;
 	background-size: cover;
-	background-position: center; 
+	background-position: center;
 	background-attachment: fixed;
 	overflow: hidden;
 	position: relative;
@@ -459,7 +624,7 @@ section .section-header{
     font-size: 45px;
     background: transparent;
     box-shadow: 0 0 0;
-    margin-top:20px; 
+    margin-top:20px;
 	text-transform: none;
 }
 #intro p.description{
@@ -505,14 +670,14 @@ section .section-header{
 }
 @media screen and (max-width:400px){
 	#intro .heading{
-		font-size:22px; 
+		font-size:22px;
 	}
 }
 /** Intro Section End **/
 
 /** Events Section **/
 #events{
-    background: url("../images/bg-1080p-2.jpg");
+    background: url("../../images/bg-1080p-2.jpg");
     background-attachment: fixed;
     background-size: cover;
     color: #000;
@@ -667,17 +832,17 @@ section .section-header{
 	font-weight:600;
 }
 .youtubeVideoTitleContainer h2.text-small{
-	font-size:18px;	
+	font-size:18px;
 }
 /** Common Styles End **/
 
 /** Webinars Section **/
 #webinars{
-    background: url("../images/bg-1080p-4.jpg");
+    background: url("../../images/bg-1080p-4.jpg");
     background-attachment: fixed;
     background-size: cover;
 }
-/** Webinars Section Custom Slick Slider Styles 
+/** Webinars Section Custom Slick Slider Styles
 #webinars .slick-dots li button:before,
 #team .slick-dots li button:before,{
     color: #FFF;
@@ -695,8 +860,8 @@ section .section-header{
 
 /** Alumni Section **/
 #alumni{
-	padding:100px 5px; 
-    background: url("../images/bg-1080p-3.jpg");
+	padding:100px 5px;
+    background: url("../../images/bg-1080p-3.jpg");
     background-attachment: fixed;
     background-size: cover;
 }
@@ -738,7 +903,7 @@ section .section-header{
 
 /** Team Section **/
 #team{
-	background: url("../images/IMG_20170308_142700_01.jpg");
+	background: url("../../images/IMG_20170308_142700_01.jpg");
 	padding-bottom:50px;
     padding-top: 10px;
 	background-size: cover;
@@ -766,7 +931,7 @@ section .section-header{
 	height: 100%;
 }
 .teamBox .teamInfoContainer{
-	padding:10px 2px; 
+	padding:10px 2px;
 	width: 100%;
 }
 .teamBox .teamName{
@@ -784,7 +949,7 @@ section .section-header{
 
 /** Open Source and Events Participate Section Combined **/
 #openSource{
-    background: url("../images/repeat-1.jpg");
+    background: url("../../images/repeat-1.jpg");
     background-attachment: fixed;
     background-size: cover;
 }
@@ -804,7 +969,7 @@ section .section-header{
     color: #000;
 }
 #eventsParticipate{
-    background: url("../images/bg-1080p-2.jpg");
+    background: url("../../images/bg-1080p-2.jpg");
     background-attachment: fixed;
     background-size: cover;
 }
@@ -825,7 +990,7 @@ section .section-header{
     vertical-align: middle;
 }
 #footer .widgetTitle{
-	border-bottom:3px solid #000; 
+	border-bottom:3px solid #000;
 }
 #footer .widgetContent{
 	width: 100%;
@@ -846,7 +1011,7 @@ section .section-header{
 	font-size: 18px;
 	position: relative;
 	padding-left:23px;
-	margin:5px 0px; 
+	margin:5px 0px;
 }
 .contactLinksContainer li i.fa{
 	position: absolute;
@@ -908,4 +1073,16 @@ section.communityBox .section-header{
 		opacity: 0.6;
 		transform: scale(1.2);
 	}
+}
+@media(min-width:767px) {
+    .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
 }
