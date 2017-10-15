@@ -11,11 +11,15 @@ body{
 	text-align: center;
     background: #000;
 }
-h1.heading{
-    text-decoration: underline;
+.blink {
+    animation-name: blink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
-.underline{
-    text-decoration: underline;
+@keyframes blink {
+    0% {opacity: 1;}
+    50% {opacity: 0.3;}
+    100% {opacity: 1;}
 }
 /**Fix for white space**/
 .row{
@@ -184,7 +188,7 @@ a:hover {
 	width:100%;
 	font-size: 20px;
 }
-@media all and (min-width:300px){
+@media all and (min-width:340px){
 	.minScreenSizeOverlay{
 		display:none;
 	}
@@ -345,184 +349,6 @@ img.logo-lg{
 	animation-direction: alternate;
 	animation-iteration-count: infinite;
 }
-/** Header : Default Layout**/
-#mainHeader{
-	position: fixed;
-	top: 0;
-	left: 0;
-    background: #FFF;
-    text-align: left;
-    font-size: 16px;
-	padding:0px 10px;
-    box-shadow: 0px 0px 5px #000;
-	width: inherit;
-	z-index: 9998;
-	transition: 0.3s;
-}
-#mainHeader .navbar>.container{
-	width: 100%;
-}
-/** Custom Styles for Bootstrap Navigation **/
-#mainHeader .navbar-toggle{
-	position: absolute;
-	top:4px;right: 0;
-	border: none;
-	box-shadow: 0 0 0;
-	background: rgba(255,255,255,0.5);
-	color: rgba(0,0,0,0.7);
-	font-size: 20px;
-	padding:4px 9px;
-}
-#mainHeader .navbar{
-    width: 100%;
-    min-height: 30px;
-    overflow: hidden;
-    margin: 7px auto;
-    box-shadow: none;
-    padding: 0;
-    border: none;
-    background: transparent;
-}
-#mainHeader .navbar li{
-    padding:5px;
-    float: none;
-    list-style-type: none;
-    display: block;
-    width:auto;
-    text-align: center;
-    margin:0;
-	background: transparent;
-}
-#mainHeader .navbar li a{
-    padding: 0;
-	background: transparent;
-	transition: 0.5s;
-}
-#mainHeader .navbar li a:hover{
-	color: #000;
-}
-#mainHeader .navbar-default .navbar-nav>li>a.active{
-	color:#000;
-	padding-bottom: 5px;
-    border-bottom: 3px solid #000;
-}
-@media all and (min-width:300px){
-	#mainHeader .navbar-nav{
-		padding-top: 0.8%;
-	}
-	#mainHeader .navbar li{
-		width: 100%;
-	}
-	#mainHeader .navbar li>a{
-		color: #000;
-	}
-}
-@media all and (min-width:768px){
-    #mainHeader .navbar-toggle{
-        display: none;
-    }
-    #mainHeader .navbar li{
-        width: auto;
-        display: inline;
-		padding:2px 0px;
-    }
-	#mainHeader a{
-		color: #FFF;
-	}
-	#mainHeader .navbar-nav{
-		padding-top
-	}
-
-}
-@media all and (min-width: 992px){
-	#mainHeader .navbar li{
-		padding:5px;
-	}
-}
-@media all and (min-width:1200px){
-	#mainHeader .navbar li{
-		padding-top:15px;
-	}
-}
-/** End Custom Styles for Bootstrap Navgation **/
-.logo{
-    width: 200px;
-    height: auto;
-}
-@media all and (max-width:400px){
-    #mainHeader .logo{
-        width: 130px;
-    }
-}
-/** End Header: Default Layout **/
-/** Header: Sticky Layout **/
-/**
-#mainHeader.mainHeaderLayout1{
-    position:fixed;
-    top:0;
-    z-index:4;
-    width:inherit;
-
-}
-**/
-#mainHeader #mainNav>div>.row{
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
-}
-#mainHeader .navbar li{
-    float: left;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-#mainHeader .logo{
-    width: 130px;
-    height: auto;
-    margin:7px 0px;
-    padding: 1px;
-    box-sizing: content-box;
-}
-@media all and (min-width:1200px){
-	#mainHeader .logo{
-		width:150px;
-	}
-}
-#mainHeader .navigationContainer{
-    float: right;
-}
-/** Header Styles End **/
-#mainHeader.mainHeaderLayout1{
-	position: fixed;
-	background: transparent;
-	top:0;left:0;
-	width: inherit;
-	box-shadow: none;
-	color: #FFF;
-	padding-top: 10px;
-}
-#mainHeader.mainHeaderLayout1 .navbar li{
-    float: left;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-#mainHeader.mainHeaderLayout1 .navbar li>a{
-	color: rgba(255,255,255,0.8);
-}
-#mainHeader.mainHeaderLayout1 .navbar li>a:hover{
-	color: #FFF;
-}
-@media all and (max-width:767px){
-	#mainHeader.mainHeaderLayout1 .navbar-collapse{
-		background: rgba(255,255,255,0.9);
-	}
-	#mainHeader.mainHeaderLayout1 .navbar li>a{
-		color: rgba(0,0,0,0.8);
-	}
-	#mainHeader.mainHeaderLayout1 .navbar li>a:hover{
-		color: #000;
-	}
-
-}
 /** Section Default Styles **/
 section{
 	width: 100%;
@@ -551,64 +377,26 @@ section .section-header{
 	left:0;right:0;
     box-shadow: 0 0 0;
 }
-/** Section Styles End **/
-
 /** Home Styles **/
 #home{
     width: inherit;
 	height: 100vh;
     overflow: hidden;
 	margin-top:0;
+    background-image: url("../../images/home.webp");
+    background-attachment: fixed;
 }
-#home .container{
-    padding: 0;
-	height: inherit;
+#homeTxtContainer{
+    height: 500px;
+    font-size: 30px;
+    float: none;
 }
-#home .slide{
-	color: #FFF;
-	height: 100vh;
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-	overflow: hidden;
-	position: relative;
+#homeTxt{
+    vertical-align: middle;
+    text-align: center;
+    float: none;
+    margin-right: 7px;
 }
-#home .slide .container::before{
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: rgba(0,0,0,0.4);
-}
-#home .slide .slideContent{
-	position: absolute;
-	width: 100%;
-}
-#home .slide .slideHeader h1{
-	font-size: 50px;
-}
-#home .slide button{
-	width:30%;
-	min-width: 100px;
-	height: 60px;
-	padding: 5px;
-	margin:20px 0 0 0;
-}
-#home .slide p.description{
-	font-size: 1.4em;
-}
-@media all and (max-width:768px){
-	#home .slide .slideHeader h1{
-		font-size: 45px;
-	}
-}
-@media all and (min-width:1200px){
-	#home .slide .slideHeader h1{
-		font-size: 60px;
-	}
-}
-/** End Home Styles **/
-
 /** Intro Section **/
 #intro{
     background: #2f2f2f;

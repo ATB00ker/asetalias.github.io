@@ -8,23 +8,18 @@ h1{
     font-family: 'Dosis', sans-serif;
     font-weight: 500;
 }
+#homeTxt{
+    font-family: 'Pacifico', cursive;
+    font-size: 78px;
+}
 .preloader .preloader-content .loading-text{
     font-family: 'Dosis', sans-serif;
     font-weight:300;
-}
-#mainHeader li>a{
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 300 !important;
-    font-size: 1em;
 }
 section .section-header{
     font-family: 'Dosis', sans-serif;
     font-weight: 800;
     font-size: 2.5em;
-}
-#home .slide h1{
-    font-family: 'Dosis', sans-serif;
-    font-weight: 700;
 }
 p.description, .servicesList li{
     font-family: 'Dosis', sans-serif;
