@@ -4,26 +4,26 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Search engine optimisatin -->
+    <!-- Search engine optimisation -->
     <meta name="description" content="ASET ALIAS Official Website">
     <meta name="keywords" content="Aset, Alias, Alias Club, Linux, Amity, Linux User Group, LUG, Amity LUG, Linux Assistance">
     <meta name="author" content="ALIAS">
     <!-- Browser tab theme color for Chrome on Android -->
     <meta name="theme-color" content="#87AB87">
     <title>ALiAS: Amity Linux Assistance Sapience</title>
+    <!-- Font Awesome Icons -->
+    <script async src="https://use.fontawesome.com/b78f5ffe7f.js"></script>
     <!-- Site favicon -->
     <link href="assets/images/favicon.webp" rel="shortcut icon">
     <link href="assets/images/favicon.webp" rel="apple-touch-icon">
-    <!-- Bootstrap Core CSS -->
+    <!-- Bootstrap Styles -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Font Awesome CSS -->
-    <script async src="https://use.fontawesome.com/b78f5ffe7f.js"></script>
-    <!-- Custom CSS -->
+    <!-- Owl Carousel Styles -->
+    <link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="assets/css/owl.theme.green.min.css" rel="stylesheet" />
+    <!-- Custom Styles -->
     <link href="assets/css/user/main.css" rel="stylesheet" />
     <link href="assets/css/user/fonts.css" rel="stylesheet" />
-    <!-- Slider CSS -->
-    <link href="assets/css/slick.css" rel="stylesheet">
-    <link href="assets/css/slick-theme.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -36,14 +36,14 @@
     <div class="minScreenSizeOverlay">
         <div class="contentContainer">
             <div class="content">
-                <img src="assets/images/ALiAS.png" class="logo-med" /><br>
+                <img src="assets/images/ALiAS.webp" class="logo-med" /><br>
                 Zoom out in browser or use a bigger display!
             </div>
         </div>
     </div>
 <section id="home" class="home-section">
     <div class="absolute-center" id='homeTxtContainer'>
-        <img height="200px" width="200px" alt='ALiAS' src='assets/images/ALiAS.webp'>
+        <img id="homeTxtContainerImage" height="200px" width="200px" alt='Logo' src='assets/images/ALiAS.webp'>
         <h1 id='homeTxt'>Welcome, Developer</h1>
         <i class="fa fa-angle-double-down blink" aria-hidden="true"></i>
     </div>
@@ -66,8 +66,8 @@
                 <div class="section-header subheader">
                     <span class="bottom-border bottom-border-danger"><i class="fa fa-flag iconMed"></i> <span class="heading">The Journey</span></span>
                 </div>
-                <p class="description">
-                    <p>Started back in 2010; With main aim to foster the growth of use of Linux for the developers in the campus and to promote the culture of hacking and sharing.</p>ALiAS is now a platform for upcoming developers for finding exposure by meeting the people working in related industries, learning various languages and becoming a better developer
+                <p id='introTxt'>
+                    Started back in 2010; With main aim to foster the growth of use of Linux for the developers in the campus and to promote the culture of hacking and sharing.<br>ALiAS is now a platform for upcoming developers for finding exposure by meeting the people working in related industries, learning various languages and becoming a better developer
                 </p>
             </div>
             <div class="siteAboutServices col-sm-6">
@@ -82,313 +82,138 @@
                             Format: <li class="fa"><span>Service description</span></li>
                             fa class added in li is used to add Ticks using pseudo elements
                         -->
-                        <li><i class="fa fa-code-fork text-danger"></i><span> Stand out of crowd and learn unique skills from people already working in the industry!</span></li>
-                        <li><i class="fa fa-code-fork text-danger"></i><span> Find like minded Delhi/NCR Tech Communities.</span></li>
-                        <li><i class="fa fa-code-fork text-danger"></i><span> Find mentors for GSoC</span></li>
-                        <li><i class="fa fa-code-fork text-danger"></i><span> Learn Linux, Android, Networking, etc. There is no limit on how much and what you can learn!</span></li>
-                        <li><i class="fa fa-code-fork text-danger"></i><span> Chance to find Interships under our Alumni.</span></li>
-                        <li><i class="fa fa-code-fork text-danger"></i><span> ALiAS welcomes each and every student of amity irrespective of their department.</span></li>
-                        <li><i class="fa fa-code-fork text-danger"></i><span> Already know something? Teach it to others! That's how we work!</span></li>
+                        <li class='serviceList'><i class="fa fa-code-fork text-danger"></i><span> Stand out of crowd and learn unique skills from people already working in the industry!</span></li>
+                        <li class='serviceList'><i class="fa fa-code-fork text-danger"></i><span> Find like minded Delhi/NCR Tech Communities.</span></li>
+                        <li class='serviceList'><i class="fa fa-code-fork text-danger"></i><span> Find mentors for GSoC</span></li>
+                        <li class='serviceList'><i class="fa fa-code-fork text-danger"></i><span> Learn Linux, Android, Networking, etc. There is no limit on how much and what you can learn!</span></li>
+                        <li class='serviceList'><i class="fa fa-code-fork text-danger"></i><span> Chance to find Interships under our Alumni.</span></li>
+                        <li class='serviceList'><i class="fa fa-code-fork text-danger"></i><span> ALiAS welcomes each and every student of amity irrespective of their department.</span></li>
+                        <li class='serviceList'><i class="fa fa-code-fork text-danger"></i><span> Already know something? Teach it to others! That's how we work!</span></li>
                     </ul>
                 </p>
             </div>
         </div>
+        <div id='joinNowBtnContainer'class="row">
+            <a id="joinNowBtn" class="btn btn-danger btn-semi-transparent" href="https://goo.gl/forms/mZAhlJMxqCwZVbRK2">Join Now</a>
+        </div>
         <div class="row">
-            <a class="joinNowBtnLink" href="https://goo.gl/forms/mZAhlJMxqCwZVbRK2">
-                <!-- This anchor contains link to Registration form of the club -->
-                <button id="joinNowBtn" class="btn btn-danger btn-semi-transparent btn-lg">Join Now</button>
-            </a>
+            <div class="col-lg-12 headerContainer">
+                <span class="bottom-border bottom-border-danger center">
+                    <h1 class="siteAboutContainer animated section-header">
+                        OpenSource Communities of Delhi & NCR
+                    </h1>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <p style="padding-bottom: 20px;" class="col-sm-12">
+                ALiAS is a subset of openSource communities in Delhi & NCR; Here are some of the links to some of the communities.
+            </p>
+            <div class="row openSourceList text-center row-centered">
+                <div class="col-xs-12 col-sm-2 col-centered">
+                    <a target="_blank" href="http://pydelhi.org"><button class="btn btn-danger btn-semi-transparent">Pydelhi</button></a>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-centered">
+                    <a target="_blank" href="http://ilugd.github.io"><button class="btn btn-danger btn-semi-transparent">ILUGD</button></a>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-centered">
+                    <a target="_blank" href="http://india.linuxchix.org"><button class="btn btn-danger btn-semi-transparent">LinuxChix</button></a>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-centered">
+                    <a target="_blank" href="https://www.facebook.com/groups/0p3ns0urc3s/?hc_ref=ARTU4CE6srzzWBt7sjJiGImsG4CJgmAQXqI3Zcejqt9uKI8F6QxGRFLHq2sVNzIk_qU"><button class="btn btn-danger btn-semi-transparent">0p3nS0urc3</button></a>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-centered">
+                    <a target="_blank" href="https://docs.google.com/document/d/1s3RWKEemXNnCOPb_YyEMFIjC5C6R8R8K2gxMXRQyG7U/edit"><button class="btn btn-danger btn-semi-transparent">More</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 headerContainer">
+                <span class="bottom-border bottom-border-danger center">
+                    <h1 class="siteAboutContainer animated section-header">
+                        Helpful Links
+                    </h1>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 openSourceList text-center row-centered">
+                <div class="col-xs-12 col-sm-3 col-centered">
+                    <a target="_blank" href="https://docs.google.com/document/d/1BVU3XOpvL8Gb1Px1VlI_NU018Hoj06aOfp69_NgERjo/edit"><button class="btn btn-danger btn-semi-transparent">Important Events</button></a>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-centered">
+                    <a target="_blank" href="https://docs.google.com/document/d/1R1wNNpz8XEaelWlJr1IH50JB-PU3hid-m5X3xAXAxr4/edit"><button class="btn btn-danger btn-semi-transparent">OpenSource Softwares</button></a>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-centered">
+                    <a target="_blank" href="https://docs.google.com/document/d/1Sajm4pMdaMSPxvLNbluY9Mbgx9934CxjwvnYPuKlylM/edit"><button class="btn btn-danger btn-semi-transparent">OpenSource Projects</button></a>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-centered">
+                    <a target="_blank" href="https://docs.google.com/document/d/13h5MoQZv4KgnLjkeDiRHjaAZRF-VaUpy-ZN4EltIwiA/edit"><button class="btn btn-danger btn-semi-transparent">Learning Material</button></a>
+                </div>
+            </div>
         </div>
     </div>
-    <!--Container Ends -->
 </section>
-
 <!-- Events Section -->
-
 <section id="events" class="events-section theme-bg ">
     <div class="container">
         <div class="row row-centered">
             <div class="col-lg-12 headerContainer col-centered">
-                <span class="bottom-border center"><h1 class="section-header text-center" id="upcomingEventsHeader">Upcoming Events</h1></span>
+                <span class="bottom-border bottom-border-green center"><h1 class="section-header text-center eventsHeader">Upcoming Events</h1></span>
             </div>
         </div>
         <div class="row eventsList text-center row-centered" id="eventsListContainer">
-            <!-- This section contains all the upcoming events -->
-                <div class="slide col-xs-3 eventBox col-centered text-center" id="eventBox-">
-                    <div class="row eventTitle">
-                        <div class="col-lg-12 text-center">
-                            <h2>No Upcoming Event</h2>
-                        </div>
-                    </div>
-                    <div class="row eventInfo">
-                        <div class="col-xs-7 eventDesc">
-                            <div class="row eventDescInfo">
-                                <div class="col-lg-12">
-                                    <p class="eventDescInfoContainer">
-                                        No Upcoming Event, Stay Updated!
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-5 eventTiming text-left">
-                            <div class="date">
-                                <i class="fa fa-calendar"></i>&nbsp;
-                                <span><strong>NA</strong></span>
-                            </div>
-                            <div class="startTimimg">
-                                <i class="fa fa-clock-o"></i>&nbsp;
-                                <span><strong>NA</strong></span>
-                            </div>
-                            <div class="endTimimg">
-                                <i class="fa fa-clock-o"></i>
-                                <span><strong>NA</strong></span>
-                            </div>
-                            <div class="eventLocation">
-                                <i class="fa fa-map-marker"></i>
-                                <span><strong>NA</strong></span>
-                            </div>
-                            <div class="eventOD">
-                                <strong>OD</strong>&nbsp;
-                                <span class="text-danger">No</span>
+            <div class="col-xs-3 eventBox col-centered text-center">
+                <div class="row"><img class="eventThumb" alt="Poster" src="assets/images/events/default.webp"></div>
+                <div style='height: 55px' class="row eventTitle">
+                    <div class="col-lg-12 text-center">
+                        <h2>Looking for events...</h2></div>
+                </div>
+                <div class="row eventInfo">
+                    <div class="col-xs-12 eventDesc">
+                        <div style='height: 135px' class="row eventDescInfo" style='height: 110px;'>
+                            <div class="col-lg-12">
+                                <p class="eventDescInfoContainer">If this screen presists for a long time, check your internet connection, If your connection is working that means it is an error! Please report it at ajay39in@gmail.com. Thanks!</p>
                             </div>
                         </div>
                     </div>
                     <div class="row eventCTA">
                         <div class="col-xs-12 text-center">
-                            <a href="http://bit.ly/aliaseventsuggest" target="_blank">
-                                <button class="btn btn-danger btn-lg">Suggest a Event</button>
+                            <a href="mailTo:ajay39in@gmail.com" target="_blank">
+                                <button class="event-buttons">Send E-mail</button>
                             </a>
                         </div>
                     </div>
                 </div>
-
-        </div>
-    </div>
-    <div class="row text-right">
-        <div class="btn-group btn-sm">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScpSM7nisQQKlBB5oYdkeo2cMV6I0b__F_KowLgbUJePyyLZg/viewform?usp=sf_link"><button class="event-buttons btn  btn-danger" id="eventHostBtn">Want to host an event?</button></a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9l-82I3DhhDkpSjJol86lt4QQQyB49z97ovoR9HT64uEK0A/viewform?usp=sf_link"><button class="event-buttons btn  btn-primary" id="eventSuggestBtn">Suggestion for future event?</button></a>
-        </div>
-    </div>
-</section>
-
-<!-- Webinar Section -->
-<section id="webinars" class="webinars-section">
-    <!-- Previous Webinars Section -->
-    <div class="container">
-        <div class="row row-centered">
-            <div class="col-lg-12 text-center col-centered headerContainer">
-                <span class="bottom-border center bottom-border-white">
-                    <h1 class="section-header" id="previousWebinarsHeader">Previous Webinars</h1>
-                </span>
             </div>
         </div>
-        <div class="row eventsList text-center slick-dark" id="webinarsListContainer">
-            <!-- Contains All Previous Webinars -->
-            <div class="col-lg-3 youtubeBox col-centered text-center slide">
-                <div class="row youtubeVideoContainer">
-                    <img src="https://img.youtube.com/vi/CTO-8BnzS_s/mqdefault.jpg" />
-                    <a href="https://youtube.com/watch?v=CTO-8BnzS_s" target="_blank">
-                        <div class="video-overlay hover-opacity background-overlay background-overlay-20">
-                            <i class="fa fa-play fa-4x text-danger absolute-center play-icon"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="row youtubeInfoContainer">
-                    <div class="row youtubeVideoTitleContainer">
-                        <div class="col-lg-12">
-                            <h2 class="youtubeVideoTitletext-small">
-                                <a href="https://youtube.com/watch?v=CTO-8BnzS_s"  target="_blank">Introduction to Linux</a>
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="row youtubeVideoDescContainer">
-                        <div class="col-lg-12">
-                            <p class="youtubeVideoDesc">This webinar would be about basics of Linux and its terminologies. We'll be covering basics of command lines/principles/every 'Must Know' things about Linux.<br/><strong>Speakers:</strong> <br/><strong>Anuvrat Parashar:</strong> <a href = "http://anuvrat.in/">http://anuvrat.in/</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 youtubeBox col-centered text-center slide">
-                <div class="row youtubeVideoContainer">
-                    <img src="https://img.youtube.com/vi/gmi_YM_N2L4/mqdefault.jpg" />
-                    <a href="https://youtube.com/watch?v=gmi_YM_N2L4" target="_blank">
-                        <div class="video-overlay hover-opacity background-overlay background-overlay-20">
-                            <i class="fa fa-play fa-4x text-danger absolute-center play-icon"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="row youtubeInfoContainer">
-                    <div class="row youtubeVideoTitleContainer">
-                        <div class="col-lg-12">
-                            <h2 class="youtubeVideoTitletext-small">
-                                <a href="https://youtube.com/watch?v=gmi_YM_N2L4"  target="_blank">Introduction to Command Line Interface</a>
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="row youtubeVideoDescContainer">
-                        <div class="col-lg-12">
-                            <p class="youtubeVideoDesc">This webinar would be about basics of using Command Line Interface in Linux. We'll be covering basics of command lines/ principles/ every 'Must Know' things about Linux. <br/><strong>Speakers:</strong> <br/><strong>Rohit Goyal:</strong> <a href = "https://about.me/rohitgoyal18">about.me/rohit</a> </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 youtubeBox col-centered text-center slide">
-                <div class="row youtubeVideoContainer">
-                    <img src="https://img.youtube.com/vi/JcYABQrAkaU/mqdefault.jpg" />
-                    <a href="https://youtube.com/watch?v=JcYABQrAkaU" target="_blank">
-                        <div class="video-overlay hover-opacity background-overlay background-overlay-20">
-                            <i class="fa fa-play fa-4x text-danger absolute-center play-icon"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="row youtubeInfoContainer">
-                    <div class="row youtubeVideoTitleContainer">
-                        <div class="col-lg-12">
-                            <h2 class="youtubeVideoTitletext-small">
-                                <a href="https://youtube.com/watch?v=JcYABQrAkaU"  target="_blank">Open Source Softwares</a>
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="row youtubeVideoDescContainer">
-                        <div class="col-lg-12">
-                            <p class="youtubeVideoDesc">Learn the basics of Open Source and Open Source Software in this live interactive session.<br/><strong>Speakers:</strong> <br/><strong>Amit Kumar:</strong> <a href = "http://iamit.in">http://iamit.in</a> <br/><strong>Sanyam Khurana:</strong> <a href="http://www.sanyamkhurana.com">sanyamkhurana.com</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 youtubeBox col-centered text-center slide">
-                <div class="row youtubeVideoContainer">
-                    <img src="https://img.youtube.com/vi/fjxUa7HX0NY/mqdefault.jpg" />
-                    <a href="https://youtube.com/watch?v=fjxUa7HX0NY" target="_blank">
-                        <div class="video-overlay hover-opacity background-overlay background-overlay-20">
-                            <i class="fa fa-play fa-4x text-danger absolute-center play-icon"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="row youtubeInfoContainer">
-                    <div class="row youtubeVideoTitleContainer">
-                        <div class="col-lg-12">
-                            <h2 class="youtubeVideoTitletext-small">
-                                <a href="https://youtube.com/watch?v=fjxUa7HX0NY"  target="_blank">Wordpress 101</a>
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="row youtubeVideoDescContainer">
-                        <div class="col-lg-12">
-                            <p class="youtubeVideoDesc">Wordpress is an online, open source website creation tool written in PHP. But in non-geek speak.It's probably the easiest and most powerful blogging and website content management system (or CMS) in existience today.Here's your chance to learn from the expert.<br><strong>Speakers:<br>Samriddha Prajapati:</strong> <a href="http://samriddha.hol.es/web/" target="_blank">http://samriddha.hol.es/web/</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 youtubeBox col-centered text-center slide">
-                <div class="row youtubeVideoContainer">
-                    <img src="https://img.youtube.com/vi/i6vKEo12KfE/mqdefault.jpg" />
-                    <a href="https://youtube.com/watch?v=i6vKEo12KfE" target="_blank">
-                        <div class="video-overlay hover-opacity background-overlay background-overlay-20">
-                            <i class="fa fa-play fa-4x text-danger absolute-center play-icon"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="row youtubeInfoContainer">
-                    <div class="row youtubeVideoTitleContainer">
-                        <div class="col-lg-12">
-                            <h2 class="youtubeVideoTitletext-normal">
-                                <a href="https://youtube.com/watch?v=i6vKEo12KfE"  target="_blank">GitHub 101</a>
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="row youtubeVideoDescContainer">
-                        <div class="col-lg-12">
-                            <p class="youtubeVideoDesc">New to GitHub? Learn about the basic working of GitHub and what it is from this webinar.You can look more over here w.r.t to downloads and what all you need to perform GIT config on your machine : https://desktop.github.com/<br><strong>Speakers:<br>Aniket Maithani:</strong> <a href="http://www.aniketmaithani.net/" target="_blank">http://www.aniketmaithani.net/</a></p>
-                        </div>
-                    </div>
-                </div>
+        <div class="row">
+            <div class="nextEventsButtons">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScpSM7nisQQKlBB5oYdkeo2cMV6I0b__F_KowLgbUJePyyLZg/viewform?usp=sf_link"><button class="event-buttons" id="eventHostBtn">Want to host an event?</button></a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9l-82I3DhhDkpSjJol86lt4QQQyB49z97ovoR9HT64uEK0A/viewform?usp=sf_link"><button class="event-buttons" id="eventSuggestBtn">Suggestion for future event?</button></a>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Open Source Section -->
-<section id="openSource" class="open-source-section">
-    <div class="container">
         <div class="row row-centered">
             <div class="col-lg-12 headerContainer col-centered">
-                <span class="bottom-border center">
-                    <h1 class="section-header" id="openSourceHeader">Join the Open Source Communities</h1>
-                    <div>
-                        <em>Click on logo to know more</em>
+                <span class="bottom-border bottom-border-green center"><h1 class="section-header text-center eventsHeader">Previous Webinars</h1></span>
+            </div>
+        </div>
+        <div class="row eventsList text-center" id="webinarsListContainer">
+            <div class="col-xs-3 eventBox col-centered text-center">
+                <div class="row"><img class="eventThumb" alt="Poster" src="assets/images/events/default.webp"></div>
+                <div style='height: 55px' class="row eventTitle">
+                    <div class="col-lg-12 text-center">
+                        <h2>Looking for webinars...</h2></div>
+                </div>
+                <div class="row eventInfo">
+                    <div class="col-xs-12 eventDesc">
+                        <div style='height: 135px' class="row eventDescInfo" style='height: 110px;'>
+                            <div class="col-lg-12">
+                                <p class="eventDescInfoContainer">If this screen presists for a long time, check your internet connection, If your connection is working that means it is an error! Please report it at ajay39in@gmail.com. Thanks!<br><b>In the meanwhile go to our <a class="linkStyles" href='http://bit.ly/amityWebinars'>youtube channel(ASET ALIAS)</a>, Cheers!</b></p>
+                            </div>
+                        </div>
                     </div>
-                </span>
-            </div>
-        </div>
-        <div class="row openSourceList text-center row-centered" id="openSourceListContainer">
-            <div class="col-sm-2 col-centered logoContainer">
-                <a href="communities.html#pydelhi">
-                    <img src="assets/images/logos/pydelhi.png" class="logo-med" title="PyDelhi" alt="PyDelhi"/>
-                </a>
-            </div>
-            <div class="col-sm-2 col-centered logoContainer">
-                <a href="communities.html#ilugd">
-                    <img src="assets/images/logos/ilugd.png" class="logo-med" title="Indian Linux Users Group Delhi" alt="Indian Linux Users Group Delhi"/>
-                </a>
-            </div>
-            <div class="col-sm-2 col-centered logoContainer">
-                <a href="communities.html#linuxchix">
-                    <img src="assets/images/logos/linuxchix.png" class="logo-med" title="LinuxChix India" alt="LinuxChix India"/>
-                </a>
-            </div>
-            <div class="col-sm-2 col-centered logoContainer">
-                <a href="communities.html#mozpacers">
-                    <img src="assets/images/logos/mozpacers.png" class="logo-med" title="Mozilla Delhi" alt="Mozilla Delhi"/>
-                </a>
-            </div>
-            <div class="col-sm-2 col-centered logoContainer">
-                <a href="communities.html#opensource">
-                    <img src="assets/images/logos/opensource.png" class="logo-med" title="Open Source Community" alt="Open Source Community"/>
-                </a>
-            </div>
-            <div class="col-sm-2 col-centered logoContainer">
-                <a href="communities.html#pycon">
-                    <img src="assets/images/logos/pycon.png" class="logo-med" title="PyCon India" alt="PyCon India"/>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Alumni Section -->
-<section id="alumni" class="alumni-section ">
-    <div class="container">
-        <div class="fa jumbotron alumniDescription row-centered">
-            <p>Alumni who were a part of ALiAS are now placed in various companies or some of them are still consulting other(s) in the open source domain</p>
-        </div>
-    </div>
-</section>
-
-<!-- Participate & Learn Section -->
-<section id="eventsParticipate" class="events-participate-section">
-    <div class="container">
-        <div class="row row-centered">
-            <div class="col-lg-12 headerContainer col-centered">
-                <span class="bottom-border center"><h1 class="section-header" id="openSourceHeader">Participate & Learn</h1></span>
-            </div>
-        </div>
-        <div class="row eventsParticipateList text-center row-centered" id="eventsParticipateListContainer">
-            <div class="col-sm-3 col-centered logoContainer">
-                <a href="https://summerofcode.withgoogle.com/"  target="_blank">
-                    <img src="assets/images/logos/gsoc.png" class="logo-med" title="Google Summer of Code" alt="Google Summer of Code"/>
-                </a>
-            </div>
-            <div class="col-sm-3 col-centered logoContainer">
-                <a href="https://ilugd.github.io/"  target="_blank">
-                    <img src="assets/images/logos/outreachy.png" class="logo-med" title="Outreachy" alt="Outreachy"/>
-                </a>
-            </div>
-            <div class="col-sm-3 col-centered logoContainer">
-                <a href="https://in.pycon.org"  target="_blank">
-                    <img src="assets/images/logos/pycon.png" class="logo-med" title="PyCon India" alt="PyCon India"/>
-                </a>
+                </div>
             </div>
         </div>
     </div>
@@ -402,7 +227,7 @@
                 <span class="bottom-border bottom-border-success center"><h1 class="section-header" id="teamHeader">Meet Our Team</h1></span>
             </div>
         </div>
-        <div class="row teamList row-centered slick-dark">
+        <div class="row teamList row-centered">
             <div class="col-lg-2 teamBox col-centered">
                 <div class="row teamPhotoContainer horizon-center hover-opacity hover-opacity-80">
                     <img src="assets/images/team/nidhi.png" alt="Ms. Nidhi Chandra" title="Ms. Nidhi Chandra" />
@@ -419,7 +244,7 @@
 
             <div class="col-lg-2 teamBox col-centered">
                 <div class="row teamPhotoContainer horizon-center hover-opacity hover-opacity-80">
-                    <img src="assets/images/team/shilpi.jpg" alt="Dr. Shilpi Sharma" title="Dr. Shilpi Sharma" />
+                    <!-- <img src="assets/images/team/shilpi.jpg" alt="Dr. Shilpi Sharma" title="Dr. Shilpi Sharma" /> -->
                 </div>
                 <div class="row bottom-border bottom-border-success bottom-border-40 teamInfoContainer text-left">
                     <div class="col-xs-12 teamName no-padding">Dr. Shilpi Sharma</div>
@@ -613,7 +438,7 @@
 
             <div class="col-lg-2 teamBox col-centered">
                 <div class="row teamPhotoContainer horizon-center hover-opacity hover-opacity-80">
-                    <img src="assets/images/team/ajay.jpg" alt="Ajay Tripathi" title="Ajay Tripathi" />
+                    <!-- <img src="assets/images/team/ajay.jpg" alt="Ajay Tripathi" title="Ajay Tripathi" /> -->
                 </div>
                 <div class="row bottom-border bottom-border-success bottom-border-40 teamInfoContainer text-left">
                     <div class="col-xs-12 teamName no-padding">Ajay Tripathi</div>
@@ -635,7 +460,7 @@
 
             <div class="col-lg-2 teamBox col-centered">
                 <div class="row teamPhotoContainer horizon-center hover-opacity hover-opacity-80">
-                    <img src="assets/images/team/anuja.jpeg" alt="Anuja Agarwal" title="Anuja Agarwal" />
+                    <!-- <img src="assets/images/team/anuja.jpeg" alt="Anuja Agarwal" title="Anuja Agarwal" /> -->
                 </div>
                 <div class="row bottom-border bottom-border-success bottom-border-40 teamInfoContainer text-left">
                     <div class="col-xs-12 teamName no-padding">Anuja Agarwal</div>
@@ -756,11 +581,27 @@
     <!-- scrollreveal Script -->
     <script async src="assets/js/scrollreveal.min.js"></script>
 
+    <!-- Functionality Script -->
+    <script async src="assets/js/user/functions.js"></script>
+
     <!-- Jquery Scripts -->
     <script src="assets/js/jquery-3.2.1.min.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <!-- Slick Slider Script -->
-    <script src="assets/js/slick.min.js"></script>
 
+    <!-- Slick Slider Script -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script>
+        function initWebinarOwl() {
+            webinarsListContainer.classList.add("owl-carousel");
+            webinarsListContainer.classList.add("owl-theme");
+            $('.owl-carousel').owlCarousel({
+                autoWidth: true,
+                loop:true,
+                margin: 20,
+                autoplay:true,
+                autoplayTimeout:3000,
+                autoplayHoverPause:true
+            });
+        }
+    </script>
 </body>
 </html>
