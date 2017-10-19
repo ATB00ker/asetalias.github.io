@@ -123,7 +123,7 @@ a:hover {
 	position: absolute;
 	width:100%;
 	height: 100%;
-	background: #efefef;
+	background: rgba(0,0,0,0.8);
 	z-index: 0;
 	top: 0;
 	left: 0;
@@ -171,12 +171,14 @@ a:hover {
 .bottom-border-white::after{
 	background: #FFF;
 }
-.hover-opacity{
-	opacity: 0.6;
-	transition: 0.5s;
-}
-.hover-opacity:hover{
-	opacity: 1;
+@media all and (max-width: 665px) {
+    .hover-opacity{
+    	opacity: 0.6;
+    	transition: 0.5s;
+    }
+    .hover-opacity:hover{
+    	opacity: 1;
+    }
 }
 /** Min Screen Size Overlay Styles **/
 .minScreenSizeOverlay{
@@ -204,111 +206,6 @@ a:hover {
 		display:none;
 	}
 }
-/** PreLoader **/
-.preloader{
-	position:fixed;
-	top: 0;
-	left: 0;
-	width:100%;
-	height:100%;
-	z-index:99999;
-	background:#000;
-}
-.preloader .content{
-	position:relative;
-	width:100%;height:100%;
-}
-.preloader .preloader-content{
-	position:absolute;
-	width:180px;
-	height:190px;
-	text-align:center;
-	margin:auto;
-	left:0;right:0;
-	top:0;bottom:0;
-	color:rgba(255,255,255,0.9);
-	font-size:40px;
-	animation-name:blinking-text;
-	animation-duration:1s;
-	animation-timing-function:linear;
-	animation-direction:alternate;
-	animation-iteration-count:infinite;
-}
-.preloader .preloader-content .loading-text{
-	color:rgba(255,255,255,0.6);
-	font-size: 25px;
-}
-/**FlashBox**/
-.flashbox{
-	display:none;
-	position:fixed;
-	top:0;left:0;
-	width:100%;
-	height:100%;
-	background:rgba(0,0,0,0.5);
-	z-index:9999;
-	text-align:center;
-}
-.flashbox .content{
-	position:absolute;
-	width:95%;
-	max-height:95%;
-	margin:auto;
-	left:0;right:0;
-	top:0;bottom:0;
-	overflow:hidden;
-}
-.flashbox .content .closeBtn{
-	position:absolute;
-	top:0;right:2px;
-	cursor:pointer;
-	color:#FFF;
-	font-size:25px;
-	z-index:3;
-}
-.flashbox .flashBox-content{
-	position:relative;
-	width:100%;
-	height:100%;
-}
-.flashbox .content .flashBox-content img{
-	position:absolute;
-	margin:auto;
-	top:0;bottom:0;
-	left:0;right:0;
-	height:auto;
-	max-height:100%;
-	max-width:100%;
-	width:auto;
-}
-/** FlashBox Styles end **/
-/** Slick Slider Custom Styles **/
-.slidesContainer{
-    width: 100%;
-    height: 600px;
-    text-align: center;
-}
-.slide{
-    text-align: center;
-    height: inherit;
-}
-.slick-initialized .slick-slide{
-    display: inline-block;
-}
-.slide img{
-    margin: auto;
-    left: 0;
-    right: 0;
-    height: 700px;
-    width: 100%;
-}
-.slick-dark .slick-dots li button{
-	box-shadow: 0 0 0;
-}
-.slick-dark .slick-dots li button::before{
-	color:#FFF;
-}
-/** Slick Slider Custom Styles End **/
 /** Page Styles Start **/
 #contentWrap{
     width: 100%;
@@ -336,8 +233,8 @@ img.logo-med{
 img.logo-sm{
     width: auto;
     height: auto;
-    max-height:50px;
-    max-width: 100px;
+    max-height: 70px;
+    max-width: 130px;
 }
 img.logo-lg{
 	width: 300px;
@@ -708,78 +605,21 @@ section .section-header{
     background-attachment: fixed;
     background-size: cover;
 }
-/** Webinars Section Custom Slick Slider Styles
-#webinars .slick-dots li button:before,
-#team .slick-dots li button:before,{
-    color: #FFF;
-}
-#webinars .slick-dots li.slick-active button:before,
-#team .slick-dots li.slick-active button:before{
-    color:#FFF;
-}
-#webinars .slick-arrow::before,
-#team .slick-arrow::before{
-    color:#000;
-}
-/** End Custom Slick Slider Styles **/
-/** End Webinar Section **/
 .btn-danger:hover {
     color: #fff;
     background-color: #c9302c;
     border-color: #ac2925;
-/** Alumni Section **/
-#alumni{
-	padding:100px 5px;
-    background: url("../../images/bg-1080p-3.jpg");
-    background-attachment: fixed;
-    background-size: cover;
 }
-#alumni .container{
-	height: 100%;
-}
-#alumni .alumniDescription{
-	position:relative;
-	margin: 0;
-	text-align:center;
-	color: #fff;
-	background: transparent;
-}
-#alumni .alumniDescription p{
-	font-size:35px;
-	color: rgba(255,255,255,0.8);
-}
-/** BlockQuote **/
-#alumni .alumniDescription:before{
-	content:'\f10d';
-	position:absolute;
-	top:0;
-	left:0;
-	color: #fff;
-	opacity: 0.1;
-	font-size:45px;
-}
-#alumni .alumniDescription:after{
-	content:'\f10e';
-	position:absolute;
-	bottom:0;
-	right:0;
-	color: #fff;
-	opacity: 0.1;
-	font-size:45px;
-}
-/** BlockQuotes End **/
-/** Alumni Section End **/
-
 /** Team Section **/
-#team{
-	background: url("../../images/IMG_20170308_142700_01.jpg");
+#team {
+	background-image: url("../../images/team_bg.webp")!important;
 	padding-bottom:50px;
     padding-top: 10px;
 	background-size: cover;
 	background-position: center;
 }
 /** Teambox Styles **/
-.teamBox{
+.teamBox {
 	position:relative;
 	width:250px!important;
 	height:390px;
@@ -788,7 +628,7 @@ section .section-header{
 	margin:30px;
 	color:#FFF;
 }
-.teamBox .teamPhotoContainer{
+.teamBox .teamPhotoContainer {
 	border-radius:5px;
 	overflow:hidden;
 	height:250px;
@@ -877,13 +717,11 @@ section .section-header{
 	padding:5px;
 }
 .contactLinksContainer li{
-	font-size: 18px;
 	position: relative;
-	padding-left:23px;
 	margin:5px 0px;
 }
 .contactLinksContainer li i.fa{
-	position: absolute;
+    font-size: 30px;
 	width: 1em;
 	height: 1em;
 	top: 0;

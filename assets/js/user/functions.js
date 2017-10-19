@@ -2,16 +2,18 @@ metaData();
 function metaData() {
     var metaDataList = [];
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET","https://sheets.googleapis.com/v4/spreadsheets/1q4CHyNi7gOkNkA1BeX5afx97I-pBHtZ-7EjwHJ_iX8Q/values/Meta!B1:B2?majorDimension=COLUMNS&key=AIzaSyBKHdcIxNSs4MahPzPepO99YGilHD5wgKs", true);
+    xhttp.open("GET","https://sheets.googleapis.com/v4/spreadsheets/1q4CHyNi7gOkNkA1BeX5afx97I-pBHtZ-7EjwHJ_iX8Q/values/Meta!B1:B3?majorDimension=COLUMNS&key=AIzaSyBKHdcIxNSs4MahPzPepO99YGilHD5wgKs", true);
     xhttp.send();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var metaDataList = JSON.parse(this.responseText);
             upcomingEvents(metaDataList.values[0][0]);
             previousWebinars(metaDataList.values[0][1]);
+            team(metaDataList.values[0][2]);
         } else {
             upcomingEvents(-1);
             previousWebinars(-1);
+            team(-1);
         }
     };
 }
@@ -51,15 +53,54 @@ function previousWebinars(numberOfWebinars) {
                 var webinarsList = JSON.parse(this.responseText);
                 webinarsListContainer.innerHTML = '';
                 for (x in webinarsList.values){
-                    var html = '<div class="item"><div class=" col-lg-3 youtubeBox col-centered text-center"><div class="row youtubeVideoContainer"><img src="'+webinarsList.values[x][0]+'"/><a href="'+webinarsList.values[x][1]+'" target="_blank"><div class="video-overlay hover-opacity background-overlay background-overlay-20"><i class="fa fa-play fa-4x text-danger absolute-center play-icon"></i></div></a></div><div class="row youtubeInfoContainer"><div class="row youtubeVideoTitleContainer"><div class="col-lg-12"><h2 class="youtubeVideoTitletext-small"><a href="'+webinarsList.values[x][1]+'" target="_blank">'+webinarsList.values[x][2]+'</a></h2></div></div><div class="row youtubeVideoDescContainer"><div class="col-lg-12"><p class="youtubeVideoDesc">'+webinarsList.values[x][3]+'<br><strong>Speakers:</strong><br><a class="linkStyles" href = "'+webinarsList.values[x][5]+'">'+webinarsList.values[x][4]+'</a>';
-                    if(webinarsList.values[x][6] != null)
+                    var html = '<div class="item"><div class=" col-lg-3 youtubeBox col-centered text-center"><div class="row youtubeVideoContainer"><img src="'+webinarsList.values[x][0]+'"/><a href="'+webinarsList.values[x][1]+'" target="_blank"><div class="video-overlay hover-opacity background-overlay background-overlay-20"><i class="fa fa-play fa-4x text-danger absolute-center play-icon" aria-hidden="true"></i></div></a></div><div class="row youtubeInfoContainer"><div class="row youtubeVideoTitleContainer"><div class="col-lg-12"><h2 class="youtubeVideoTitletext-small"><a href="'+webinarsList.values[x][1]+'" target="_blank">'+webinarsList.values[x][2]+'</a></h2></div></div><div class="row youtubeVideoDescContainer"><div class="col-lg-12"><p class="youtubeVideoDesc">'+webinarsList.values[x][3]+'<br><strong>Speakers:</strong><br><a class="linkStyles" href = "'+webinarsList.values[x][5]+'">'+webinarsList.values[x][4]+'</a>';
+                    if(webinarsList.values[x][6] != -1)
                         html += '<br><a class="linkStyles" href = "'+webinarsList.values[x][7]+'">'+webinarsList.values[x][6]+'</a>';
-                    if(webinarsList.values[x][8] != null)
+                    if(webinarsList.values[x][8] != -1)
                         html += '<br><a class="linkStyles" href = "'+webinarsList.values[x][9]+'">'+webinarsList.values[x][8]+'</a>';
                     html += '</p></div></div></div></div></div>';
                     webinarsListContainer.innerHTML += html;
                 }
                 initWebinarOwl();
+            }
+        };
+    }
+}
+
+function team(memberNumber) {
+    var teamListContainer = document.getElementById('teamListContainer');
+    var teamList = [];
+    var xhttp = new XMLHttpRequest();
+    if(memberNumber!=-1) {
+        xhttp.open("GET",'https://sheets.googleapis.com/v4/spreadsheets/1q4CHyNi7gOkNkA1BeX5afx97I-pBHtZ-7EjwHJ_iX8Q/values/Team!A2:K'+(++memberNumber)+'?key=AIzaSyBKHdcIxNSs4MahPzPepO99YGilHD5wgKs', true);
+        xhttp.send();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var teamList = JSON.parse(this.responseText);
+                teamListContainer.innerHTML = '';
+                for (x in teamList.values){
+                    html = '<div class="col-lg-2 teamBox col-centered"><div class="row teamPhotoContainer horizon-center hover-opacity hover-opacity-80"><img src="'+teamList.values[x][0]+'" alt="'+teamList.values[x][1]+'" title="'+teamList.values[x][1]+'" height="250px" width="250px"></div><div class="row bottom-border bottom-border-success bottom-border-40 teamInfoContainer text-left"><div class="col-xs-12 teamName no-padding">'+teamList.values[x][1]+'</div><div class="col-xs-12 teamDesignation no-padding">'+teamList.values[x][2]+'</div></div><div class="row teamSocial">';
+                    if(teamList.values[x][3] != -1)
+                    html += '<div class="col-xs-2 no-padding"><a href="'+teamList.values[x][3]+'" target="_blank" title="Github"><span class="fa-stack fa-lg pull-left hover-opacity"><i class="fa fa-circle fa-stack-2x fa-inverse"></i><i class="fa fa-github fa-stack-1x"></i></span></a></div>';
+                    if(teamList.values[x][4] != -1)
+                    html += '<div class="col-xs-2 no-padding"><a href="'+teamList.values[x][4]+'" target="_blank" title="Mail"><span class="fa-stack fa-lg pull-left hover-opacity"><i class="fa fa-circle fa-stack-2x fa-inverse"></i><i class="fa fa-envelope fa-stack-1x"></i></span></a></div>';
+                    if(teamList.values[x][5] != -1)
+                    html += '<div class="col-xs-2 no-padding"><a href="'+teamList.values[x][5]+'" target="_blank" title="Telegram"><span class="fa-stack fa-lg pull-left hover-opacity"><i class="fa fa-circle fa-stack-2x fa-inverse"></i><i class="fa fa-telegram fa-stack-1x"></i></span></a></div>';
+                    if(teamList.values[x][6] != -1)
+                    html += '<div class="col-xs-2 no-padding"><a href="'+teamList.values[x][6]+'" target="_blank" title="LinkedIn"><span class="fa-stack fa-lg pull-left hover-opacity"><i class="fa fa-circle fa-stack-2x fa-inverse"></i><i class="fa fa-linkedin fa-stack-1x"></i></span></a></div>';
+                    if(teamList.values[x][7] != -1)
+                    html += '<div class="col-xs-2 no-padding"><a href="'+teamList.values[x][7]+'" target="_blank" title="Facebook"><span class="fa-stack fa-lg pull-left hover-opacity"><i class="fa fa-circle fa-stack-2x fa-inverse"></i><i class="fa fa-facebook fa-stack-1x"></i></span></a></div>';
+                    if(teamList.values[x][8] != -1)
+                    html += '<div class="col-xs-2 no-padding"><a href="'+teamList.values[x][8]+'" target="_blank" title="Twitter"><span class="fa-stack fa-lg pull-left hover-opacity"><i class="fa fa-circle fa-stack-2x fa-inverse"></i><i class="fa fa-twitter fa-stack-1x"></i></span></a></div>';
+                    if(teamList.values[x][9] != -1)
+                    html += '<div class="col-xs-2 no-padding"><a href="'+teamList.values[x][9]+'" target="_blank" title="Instagram"><span class="fa-stack fa-lg pull-left hover-opacity"><i class="fa fa-circle fa-stack-2x fa-inverse"></i><i class="fa fa-instagram fa-stack-1x"></i></span></a></div>';
+                    if(teamList.values[x][10] != -1)
+                    html += '<div class="col-xs-2 no-padding"><a href="'+teamList.values[x][10]+'" target="_blank" title="Website"><span class="fa-stack fa-lg pull-left hover-opacity"><i class="fa fa-circle fa-stack-2x fa-inverse"></i><i class="fa fa-link fa-stack-1x"></i></span></a></div>';
+                    html += '</div></div>';
+                    teamListContainer.innerHTML += html;
+                }
+                if(document.body.clientWidth < 665)
+                    initTeamOwl();
             }
         };
     }
