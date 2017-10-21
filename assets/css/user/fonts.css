@@ -38,12 +38,13 @@ p.description, .servicesList li{
     font-family: 'Dosis', sans-serif;
     font-weight: 300;
 }
+#mediaPartner {
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+}
 .youtubeVideoTitleContaier h2{
     font-family: 'Dosis', sans-serif;
     font-weight: 400;
-}
-#alumni .alumniDescription p{
-    font-family: 'Pacifico', cursive;
 }
 .teamBox .teamName{
     font-size:1.7em;

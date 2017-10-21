@@ -193,12 +193,37 @@
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9l-82I3DhhDkpSjJol86lt4QQQyB49z97ovoR9HT64uEK0A/viewform?usp=sf_link"><button class="event-buttons" id="eventSuggestBtn">Suggestion for future event?</button></a>
             </div>
         </div>
+        <div class="row">
+            <div class="row row-centered">
+                <div class="col-lg-12 headerContainer col-centered">
+                    <span class="bottom-border bottom-border-green center"><h1 class="section-header text-center eventsHeader">Event Albums</h1></span>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center row-centered" id="eventPhotosContainer">
+            <div class="picsBox col-centered">
+                    <div class="row">
+                        <div class="coverpics"><img height='192' width='192' src="assets/images/ALiAS.webp"></div>
+                    </div>
+                    <div class="row">
+                        <div class="picsText">Looking for photos...</div>
+                    </div>
+                    <div class="row">
+                        <div class="picsDate">Downloading...</div>
+                    </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="mediaPartner">
+                Photography Partner:<a href="https://www.facebook.com/exposureamity/"><img src="assets/images/Exposure.webp" height="100px"/></a>
+            </div>
+        </div>
         <div class="row row-centered">
             <div class="col-lg-12 headerContainer col-centered">
                 <span class="bottom-border bottom-border-green center"><h1 class="section-header text-center eventsHeader">Previous Webinars</h1></span>
             </div>
         </div>
-        <div class="row eventsList text-center" id="webinarsListContainer">
+        <div class="row text-center" id="webinarsListContainer">
             <div class="col-xs-3 eventBox col-centered text-center">
                 <div class="row"><img class="eventThumb" alt="Poster" src="assets/images/webinarDefault.webp"></div>
                 <div style='height: 55px' class="row eventTitle">
@@ -345,26 +370,30 @@
         function initWebinarOwl() {
             webinarsListContainer.classList.add("owl-carousel");
             webinarsListContainer.classList.add("owl-theme");
-            $('.owl-carousel').owlCarousel({
+            $('#webinarsListContainer').owlCarousel({
                 autoWidth: true,
-                loop:true,
+                margin: 20
+            });
+        }
+        function initTeamOwl() {
+            teamListContainer.classList.add("owl-carousel");
+            teamListContainer.classList.add("owl-theme");
+            $('#teamListContainer').owlCarousel({
+                center: true,
+                items:1,
+                loop: true,
                 margin: 20,
                 autoplay:true,
                 autoplayTimeout:3000,
                 autoplayHoverPause:true
             });
         }
-        function initTeamOwl() {
-            teamListContainer.classList.add("owl-carousel");
-            teamListContainer.classList.add("owl-theme");
-            $('.owl-carousel').owlCarousel({
-                center: true,
-                items:1,
-                loop:true,
-                margin: 20,
-                autoplay:true,
-                autoplayTimeout:3000,
-                autoplayHoverPause:true
+        function initAlbumOwl() {
+            eventPhotosContainer.classList.add("owl-carousel");
+            eventPhotosContainer.classList.add("owl-theme");
+            $('#eventPhotosContainer').owlCarousel({
+                autoWidth: true,
+                margin: 20
             });
         }
     </script>
