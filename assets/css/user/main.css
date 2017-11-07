@@ -295,6 +295,7 @@ section .section-header{
     background-size: cover;
 }
 #homeTxtContainer{
+    overflow: hidden;
     height: 500px;
     font-size: 30px;
     float: none;
@@ -421,7 +422,7 @@ section .section-header{
     margin-bottom: 20px;
 }
 .eventBox, .youtubeBox{
-	height: 420px;
+	height: 410px;
 	width: 340px;
 	max-width: 340px;	/** fix for Slick Slide CSS **/
 	margin:10px 20px;

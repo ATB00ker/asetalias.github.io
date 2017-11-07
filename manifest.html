@@ -20,12 +20,16 @@
     <link href="assets/images/favicon.webp" rel="apple-touch-icon">
     <!-- Bootstrap Styles -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Materialize Styles -->
+    <link href="assets/css/materialize.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css" integrity="sha256-lJMsOpLg+Hdzs297wkRxAhSlJdXcuHHyo/JoB4uI7uw=" crossorigin="anonymous" /> -->
     <!-- Owl Carousel Styles -->
     <link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
     <link href="assets/css/owl.theme.green.min.css" rel="stylesheet" />
     <!-- Custom Styles -->
     <link href="assets/css/user/main.css" rel="stylesheet" />
     <link href="assets/css/user/fonts.css" rel="stylesheet" />
+    <link href="assets/css/user/manifest.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -43,15 +47,26 @@
             </div>
         </div>
     </div>
+    <nav role="navigation">
+      <div class="nav-wrapper container"><div id="logo-container" class="brand-logo">ALiAS</div>
+        <ul id="nav-mobile" class="side-nav">
+            <li><a onClick='showHome()'>Home</a></li>
+            <li><a onClick='showJoinUs()'>Join Us</a></li>
+            <li><a onClick='showEvents()'>Events</a></li>
+            <li><a onClick='showTeam()'>Team</a></li>
+          <li><a onClick='showAboutUs()'>About Us</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="fa fa-bars" aria-hidden="true"></i></a>
+      </div>
+    </nav>
 <section id="home" class="home-section">
     <div class="absolute-center" id='homeTxtContainer'>
         <img id="homeTxtContainerImage" height="200px" width="200px" alt='Logo' src='assets/images/ALiAS.webp'>
         <h1 id='homeTxt'>Welcome, Developer</h1>
-        <i class="fa fa-angle-double-down blink" aria-hidden="true"></i>
     </div>
 </section>
 <!-- Intro Section -->
-<section id="intro" class="intro-section ">
+<section id="intro" class="intro-section">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 headerContainer">
@@ -72,6 +87,12 @@
                     Started back in 2010; With main aim to foster the growth of use of Linux for the developers in the campus and to promote the culture of hacking and sharing.<br>ALiAS is now a platform for upcoming developers for finding exposure by meeting the people working in related industries, learning various languages and becoming a better developer
                 </p>
             </div>
+        </div>
+    </div>
+</section>
+<section id="section_joinUs">
+    <div class="container">
+        <div class="row">
             <div class="siteAboutServices col-sm-6">
                 <!-- This section contains "Why should I join the club" details and Join Club link button -->
                 <div class="section-header subheader">
@@ -245,7 +266,6 @@
         </div>
     </div>
 </section>
-
 <!-- Team Section -->
 <section id="team" class="team-section background-overlay">
     <div class="container">
@@ -267,90 +287,30 @@
         </div>
     </div>
 </section>
-
 <section id="footer">
     <div class="container">
-        <div class="row widgetsContainer">
-            <div class="widgetArea col-sm-4" id="footerWidgetArea1">
-                <!-- Widget Area 1 -->
-                <div class="widget">
-                    <div class="widgetTitle">
-                        <h3>Follow us on facebook</h3>
-                    </div>
-                    <div class="widgetContent">
-                        <!-- Facebook JavaScript SDK -->
-                        <div id="fb-root"></div>
-                        <script>
-                            (function (d, s, id) {
-                                var js, fjs = d.getElementsByTagName(s)[0];
-                                if (d.getElementById(id)) return;
-                                js = d.createElement(s);
-                                js.id = id;
-                                js.src =
-                                    "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9&appId=296257484143696";
-                                fjs.parentNode.insertBefore(js, fjs);
-                            }(document, 'script', 'facebook - jssdk'));
-                        </script>
-                        <!-- Facebook JavaScript SDK -->
-                        <!-- Facebook Page Plugin -->
-                        <div class="fb-page" data-href="https://www.facebook.com/asetalias/" data-height="250" data-small-header="false" data-adapt-container-width="true">
-                            <blockquote cite="https://www.facebook.com/asetalias/" class="fb-xfbml-parse-ignore">
-                                <a href="https://www.facebook.com/asetalias/">ALiAS</a>
-                            </blockquote>
-                        </div>
-                        <!-- Facebook Page Plugin -->
-                    </div>
-                </div>
-            </div>
-            <div class="widgetArea col-sm-4" id="footerWidgetArea2">
-                <!-- Widget Area 2 -->
-                <div class="widget">
-                    <div class="widgetTitle">
-                        <h3>Subscribe us on YouTube</h3>
-                    </div>
-                    <div class="widgetContent">
-                        <div class="youtubeVideo">
-                            <img src="https://img.youtube.com/vi/fjxUa7HX0NY/mqdefault.jpg" />
-                        </div>
-                        <script src="https://apis.google.com/js/platform.js"></script>
-                        <div class="g-ytsubscribe" data-channelid="UCKkyqEMLFW3jz-q3nJIFL3g" data-layout="full" data-count="default"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="widgetArea col-sm-4" id="footerWidgetArea3">
-                <!-- Widget Area 3 -->
-                <div class="widgetTitle">
-                    <h3>Contact us</h3>
-                </div>
-                <div class="widgetContent">
-                    <ul class="col-xs-12 contactLinksContainer text-left">
-                        <li class='col-xs-1'></li>
-                        <li class='col-xs-2'>
-                            <a href="mailto:contactasetalias@gmail.com" target="_blank"><i class="fa icon-grey fa-envelope text-green"></i></a>
-                        </li>
-                        <li class='col-xs-2'>
-                            <a href="https://github.com/asetalias" target="_blank"><i class="fa icon-grey fa-github text-grey"></i></a>
-                        </li>
-                        <li class='col-xs-2'>
-                            <a href="https://www.youtube.com/channel/UCKkyqEMLFW3jz-q3nJIFL3g" target="_blank"><i class="fa icon-grey fa-youtube text-red"></i></a>
-                        </li>
-                        <li class='col-xs-2'>
-                            <a href="https://www.facebook.com/asetalias/" target="_blank"><i class="fa icon-grey fa-facebook text-blue"></i></a>
-                        </li>
-                        <li class='col-xs-2'>
-                            <a href="https://groups.google.com/forum/#!forum/amity-linux-group" target="_blank"><i class="fa icon-grey fa-google-plus-square text-yellow"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="row divider-top">
-                    <div class="col-xs-6 text-left attribution">
-                        <img class="logo logo-sm" />
-                    </div>
-                    <div class="col-xs-6 text-right">
-                        <a href="https://github.com/ATB00ker/asetalias.github.io">
-                        <img src="assets/images/github-fork.webp" alt='Fork Me on Github' class="logo-sm"/></a>
-                    </div>
-                </div>
+        <div class="widgetArea col-sm-4">
+            <div class="widgetContent">
+                <ul class="col-xs-12 contactLinksContainer text-left">
+                    <li class='col-xs-2'>
+                        <a href="mailto:contactasetalias@gmail.com" target="_blank"><i class="fa icon-grey fa-envelope text-green"></i></a>
+                    </li>
+                    <li class='col-xs-2'>
+                        <a href="https://github.com/asetalias" target="_blank"><i class="fa icon-grey fa-github text-grey"></i></a>
+                    </li>
+                    <li class='col-xs-2'>
+                        <a href="https://www.youtube.com/channel/UCKkyqEMLFW3jz-q3nJIFL3g" target="_blank"><i class="fa icon-grey fa-youtube text-red"></i></a>
+                    </li>
+                    <li class='col-xs-2'>
+                        <a href="https://www.facebook.com/asetalias/" target="_blank"><i class="fa icon-grey fa-facebook text-blue"></i></a>
+                    </li>
+                    <li class='col-xs-2'>
+                        <a href="https://groups.google.com/forum/#!forum/amity-linux-group" target="_blank"><i class="fa icon-grey fa-google-plus-square text-yellow"></i></a>
+                    </li>
+                    <li class='col-xs-2'>
+                        <a href="https://github.com/ATB00ker/asetalias.github.io" target="_blank"><i class="fa fa-code-fork" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -362,13 +322,19 @@
 
     <!-- Functionality Script -->
     <script async src="assets/js/user/functions.js"></script>
+    <script async src="assets/js/user/manifest.js"></script>
 
     <!-- Jquery Scripts -->
     <script src="assets/js/jquery-3.2.1.min.js"></script>
 
+    <!-- Materialize Scripts -->
+    <script src="assets/js/materialize.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js" integrity="sha256-uWtSXRErwH9kdJTIr1swfHFJn/d/WQ6s72gELOHXQGM=" crossorigin="anonymous"></script> -->
+
     <!-- Slick Slider Script -->
     <script src="assets/js/owl.carousel.min.js"></script>
     <script>
+        //Owl initiate
         function initWebinarOwl() {
             webinarsListContainer.classList.add("owl-carousel");
             webinarsListContainer.classList.add("owl-theme");
@@ -398,6 +364,9 @@
                 margin: 20
             });
         }
+        //Materialize Initiate
+        // Initialize collapse button
+        $(".button-collapse").sideNav();
     </script>
 </body>
 </html>

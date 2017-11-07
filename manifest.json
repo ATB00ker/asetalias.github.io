@@ -1,0 +1,17 @@
+{
+    "name": "ALiAS: Amity Linux Assistance Sapience",
+    "short_name": "ALiAS",
+    "start_url": ".",
+    "display": "standalone",
+    "lang": "en-US",
+    "start_url": "manifest.html",
+    "description": "ASET ALIAS UnOfficial Website",
+    "theme_color": "#5e8fca",
+    "background_color": "#5e8fca",
+    "icons": [
+        {
+            "src": "assets/images/ALiAS.webp",
+            "type": "image/webp"
+        }
+    ]
+}
