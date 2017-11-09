@@ -18,10 +18,10 @@
     <!-- Site favicon -->
     <link href="assets/images/favicon.webp" rel="shortcut icon">
     <link href="assets/images/favicon.webp" rel="apple-touch-icon">
-    <!-- Bootstrap Styles -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Materialize Styles -->
     <link href="assets/css/materialize.min.css" rel="stylesheet" />
+    <!-- Bootstrap Styles -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css" integrity="sha256-lJMsOpLg+Hdzs297wkRxAhSlJdXcuHHyo/JoB4uI7uw=" crossorigin="anonymous" /> -->
     <!-- Owl Carousel Styles -->
     <link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
@@ -96,7 +96,8 @@
             <div class="siteAboutServices col-sm-6">
                 <!-- This section contains "Why should I join the club" details and Join Club link button -->
                 <div class="section-header subheader">
-                    <span class="bottom-border bottom-border-danger"><i class="fa fa-university iconMed" aria-hidden="true"></i><span class="heading">Why should I join the club?</span></span>
+                    <span class="bottom-border bottom-border-danger"><i class="fa fa-university iconMed" aria-hidden="true"></i><span class="heading">Why should I join ALiAS
+                        ?</span></span>
                 </div>
                 <p class="description">
                     Join the club and which is just not about certificates or designation(s): <br/>
@@ -117,7 +118,7 @@
             </div>
         </div>
         <div id='joinNowBtnContainer'class="row">
-            <a id="joinNowBtn" class="btn btn-danger btn-semi-transparent" href="https://goo.gl/forms/mZAhlJMxqCwZVbRK2">Join Now</a>
+            <a id="joinNowBtn" class="waves-effect waves-light btn-large" href="https://goo.gl/forms/mZAhlJMxqCwZVbRK2">Join Now</a>
         </div>
         <div class="row">
             <div class="col-lg-12 headerContainer">
@@ -339,18 +340,19 @@
             webinarsListContainer.classList.add("owl-carousel");
             webinarsListContainer.classList.add("owl-theme");
             $('#webinarsListContainer').owlCarousel({
-                autoWidth: true,
-                margin: 20
+                items:1,
+                loop: true,
+                autoplay:true,
+                autoplayTimeout:3000,
+                autoplayHoverPause:true
             });
         }
         function initTeamOwl() {
             teamListContainer.classList.add("owl-carousel");
             teamListContainer.classList.add("owl-theme");
             $('#teamListContainer').owlCarousel({
-                center: true,
                 items:1,
                 loop: true,
-                margin: 20,
                 autoplay:true,
                 autoplayTimeout:3000,
                 autoplayHoverPause:true
@@ -360,8 +362,11 @@
             eventPhotosContainer.classList.add("owl-carousel");
             eventPhotosContainer.classList.add("owl-theme");
             $('#eventPhotosContainer').owlCarousel({
-                autoWidth: true,
-                margin: 20
+                items:1,
+                loop: true,
+                autoplay:true,
+                autoplayTimeout:3000,
+                autoplayHoverPause:true
             });
         }
         //Materialize Initiate

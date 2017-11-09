@@ -1,25 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Boogaloo');
 nav {
     background-color: #5e8fca!important;
     height: 10vh;
     line-height: 10vh;
-    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2)!important;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2)!important;
+    -webkit-box-shadow: 2px 2px 15px #979696!important;
+    box-shadow: 2px 2px 15px #979696!important;
 }
 #home{
+    display: none;
     width: inherit;
 	height: 73vh;
+    -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    -moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
 }
 #homeTxtContainer{
     height: 450px;
 }
-#aboutUs {
+#intro {
     display: none;
+    -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    -moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+}
+#section_joinUs {
+    display: block;
+    -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    -moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    background-color: #fff;
+}
+#team {
+    display: none;
+    -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    -moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+}
+#events {
+    display: none;
+    -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    -moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
 }
 .siteAboutServices{
     padding-top: 32px;
+}
+.siteAboutServices .section-header{
+    color: #000!important;
+}
+#joinNowBtn{
+    padding: 0;
+    width: 100%;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Boogaloo', cursive;
 }
 #footer{
     -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2)!important;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2)!important;
 	height: 17vh;
+}
+.teamBox{
+    padding: 10px 0;
+}
+.container .row {
+    margin: 0;
 }

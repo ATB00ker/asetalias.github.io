@@ -745,7 +745,7 @@ section .section-header{
 	text-transform: uppercase;
 }
 .teamBox .teamSocial{
-	margin: 5px 0;
+	margin: 5px 0!important;
 }
 /** End Teambox Styles **/
 /** End Team Section **/
