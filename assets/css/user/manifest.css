@@ -7,7 +7,7 @@ nav {
     box-shadow: 2px 2px 15px #979696!important;
 }
 #home{
-    display: none;
+    display: block;
     width: inherit;
 	height: 73vh;
     -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
@@ -24,7 +24,7 @@ nav {
     box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
 }
 #section_joinUs {
-    display: block;
+    display: none;
     -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
     -moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
     box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);

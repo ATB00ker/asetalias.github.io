@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>ALiAS: Amity Linux Assistance Sapience</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,22 @@
     <meta name="description" content="ASET ALIAS UnOfficial Website">
     <meta name="keywords" content="Aset, Alias, Alias Club, Linux, Amity, Linux User Group, LUG, Amity LUG, Linux Assistance">
     <meta name="author" content="ALIAS">
-    <!-- Browser tab theme color for Chrome on Android -->
-    <meta name="theme-color" content="#5e8fca">
-    <title>ALiAS: Amity Linux Assistance Sapience</title>
+    <!-- UI Customization -->
+        <!-- Browser tab theme color for Chrome on Android -->
+        <meta name="theme-color" content="#5e8fca">
+        <link href="assets/images/favicon.webp" rel="shortcut icon">
+        <!-- Browser tab theme color for Chrome on Android IOS -->
+        <link href="assets/images/favicon.webp" rel="apple-touch-icon">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#5e8fca">
+        <meta name="apple-mobile-web-app-title" content="ALiAS">
+        <!-- Browser tab theme color for Chrome on Android IOS -->
+        <meta name="msapplication-TileImage" content="assets/images/favicon.webp">
+        <meta name="msapplication-TileColor" content="#5e8fca">
     <!-- Font Awesome Icons -->
-    <script async src="https://use.fontawesome.com/b78f5ffe7f.js"></script>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <!-- Application Manifest -->
     <link rel="manifest" href="./manifest.json">
-    <!-- Site favicon -->
-    <link href="assets/images/favicon.webp" rel="shortcut icon">
-    <link href="assets/images/favicon.webp" rel="apple-touch-icon">
     <!-- Bootstrap Styles -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Owl Carousel Styles -->
@@ -396,6 +403,13 @@
             $('#eventPhotosContainer').owlCarousel({
                 autoWidth: true,
                 margin: 20
+            });
+        }
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('./assets/js/user/sw.js').catch(function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
             });
         }
     </script>
