@@ -12,31 +12,31 @@
     <!-- UI Customization -->
         <!-- Browser tab theme color for Chrome on Android -->
         <meta name="theme-color" content="#5e8fca">
-        <link href="assets/images/favicon.webp" rel="shortcut icon">
+        <link href="./assets/images/favicon.webp" rel="shortcut icon">
         <!-- Browser tab theme color for Chrome on Android IOS -->
-        <link href="assets/images/favicon.webp" rel="apple-touch-icon">
+        <link href="./assets/images/favicon.webp" rel="apple-touch-icon">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="#5e8fca">
         <meta name="apple-mobile-web-app-title" content="ALiAS">
         <!-- Browser tab theme color for Chrome on Android IOS -->
-        <meta name="msapplication-TileImage" content="assets/images/favicon.webp">
+        <meta name="msapplication-TileImage" content="./assets/images/favicon.webp">
         <meta name="msapplication-TileColor" content="#5e8fca">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
     <!-- Application Manifest -->
     <link rel="manifest" href="./manifest.json">
     <!-- Materialize Styles -->
-    <link href="assets/css/materialize.min.css" rel="stylesheet" />
+    <link href="./assets/css/materialize.min.css" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css" integrity="sha256-lJMsOpLg+Hdzs297wkRxAhSlJdXcuHHyo/JoB4uI7uw=" crossorigin="anonymous" /> -->
     <!-- Bootstrap Styles -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Owl Carousel Styles -->
-    <link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
-    <link href="assets/css/owl.theme.green.min.css" rel="stylesheet" />
+    <link href="./assets/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="./assets/css/owl.theme.green.min.css" rel="stylesheet" />
     <!-- Custom Styles -->
-    <link href="assets/css/user/main.css" rel="stylesheet" />
-    <link href="assets/css/user/fonts.css" rel="stylesheet" />
-    <link href="assets/css/user/manifest.css" rel="stylesheet" />
+    <link href="./assets/css/user/main.css" rel="stylesheet" />
+    <link href="./assets/css/user/fonts.css" rel="stylesheet" />
+    <link href="./assets/css/user/manifest.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -46,10 +46,11 @@
 </head>
 <body id="page-top" data-spy="scroll">
 <article id="contentWrap" class="auto-center">
+    <div id='connectionStatus'></div>
     <div class="minScreenSizeOverlay">
         <div class="contentContainer">
             <div class="content">
-                <img src="assets/images/ALiAS.webp" class="logo-med" /><br>
+                <img src="./assets/images/ALiAS.webp" class="logo-med" /><br>
                 Zoom out in browser or use a bigger display!
             </div>
         </div>
@@ -57,18 +58,32 @@
     <nav role="navigation">
       <div class="nav-wrapper container"><div id="logo-container" class="brand-logo">ALiAS</div>
         <ul id="nav-mobile" class="side-nav">
-            <li><a onClick='showHome()'>Home</a></li>
-            <li><a onClick='showJoinUs()'>Join Us</a></li>
-            <li><a onClick='showEvents()'>Events</a></li>
-            <li><a onClick='showTeam()'>Team</a></li>
-          <li><a onClick='showAboutUs()'>About Us</a></li>
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="./assets/images/events/default.webp" align="middle" hieght="100%" width="100%">
+                    </div>
+                        <img class="circle" src="./assets/images/ALiAS.webp">
+                        <div id='settingsTray'>
+                            <!-- Element Styles Inside settingsTray are used to put all the items in a line!  -->
+                            <span id='notificationIconContainer'></span>
+                            <span id='homeIconContainer'></span>
+                        </div>
+                </div>
+            </li>
+            <li><a class="waves-effect" onClick='showHome()'>Home</a></li>
+            <li><a class="waves-effect" onClick='showJoinUs()'>Join Us</a></li>
+            <li><a class="waves-effect" onClick='showEvents()'>Events</a></li>
+            <li><a class="waves-effect" onClick='showTeam()'>Team</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="waves-effect" onClick='showAboutUs()'>About Us</a></li>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="fa fa-bars"></i></a>
       </div>
     </nav>
 <section id="home" class="home-section">
     <div class="absolute-center" id='homeTxtContainer'>
-        <img id="homeTxtContainerImage" height="200px" width="200px" alt='Logo' src='assets/images/ALiAS.webp'>
+        <img id="homeTxtContainerImage" height="200px" width="200px" alt='Logo' src='./assets/images/ALiAS.webp'>
         <h1 id='homeTxt'>Welcome, Developer</h1>
     </div>
 </section>
@@ -195,7 +210,7 @@
         </div>
         <div class="row eventsList text-center row-centered" id="eventsListContainer">
             <div class="col-xs-3 eventBox col-centered text-center">
-                <div class="row"><img class="eventThumb" alt="Poster" src="assets/images/events/default.webp"></div>
+                <div class="row"><img class="eventThumb" alt="Poster" src="./assets/images/events/default.webp"></div>
                 <div style='height: 55px' class="row eventTitle">
                     <div class="col-lg-12 text-center">
                         <h2>Looking for events...</h2></div>
@@ -234,7 +249,7 @@
         <div class="row text-center row-centered" id="eventPhotosContainer">
             <div class="picsBox col-centered">
                     <div class="row">
-                        <div class="coverpics"><img height='192' width='192' src="assets/images/ALiAS.webp"></div>
+                        <div class="coverpics"><img height='192' width='192' src="./assets/images/ALiAS.webp"></div>
                     </div>
                     <div class="row">
                         <div class="picsText">Looking for photos...</div>
@@ -246,7 +261,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12" id="mediaPartner">
-                Photography Partner:<a href="https://www.facebook.com/exposureamity/"><img src="assets/images/Exposure.webp" height="100px"/></a>
+                Photography Partner:<a href="https://www.facebook.com/exposureamity/"><img src="./assets/images/Exposure.webp" height="100px"/></a>
             </div>
         </div>
         <div class="row row-centered">
@@ -256,7 +271,7 @@
         </div>
         <div class="row text-center" id="webinarsListContainer">
             <div class="col-xs-3 eventBox col-centered text-center">
-                <div class="row"><img class="eventThumb" alt="Poster" src="assets/images/webinarDefault.webp"></div>
+                <div class="row"><img class="eventThumb" alt="Poster" src="./assets/images/webinarDefault.webp"></div>
                 <div style='height: 55px' class="row eventTitle">
                     <div class="col-lg-12 text-center">
                         <h2>Looking for webinars...</h2></div>
@@ -285,7 +300,7 @@
         <div class="row teamList row-centered" id='teamListContainer'>
             <div class="col-lg-2 teamBox col-centered">
                 <div class="row teamPhotoContainer horizon-center">
-                        <img src="assets/images/ALiAS.webp" alt="'ALiAS'" title="'ALiAS'" height="250px" width="250px">
+                        <img src="./assets/images/ALiAS.webp" alt="'ALiAS'" title="'ALiAS'" height="250px" width="250px">
                 </div>
                 <div class="row bottom-border bottom-border-success bottom-border-40 teamInfoContainer text-left">
                     <div class="col-xs-12 teamName no-padding">Loading...</div>
@@ -326,21 +341,22 @@
 </article>
 
     <!-- scrollreveal Script -->
-    <script async src="assets/js/scrollreveal.min.js"></script>
+    <script async src="./assets/js/scrollreveal.min.js"></script>
 
     <!-- Functionality Script -->
-    <script async src="assets/js/user/functions.js"></script>
-    <script async src="assets/js/user/manifest.js"></script>
+    <script async src="./assets/js/user/functions.js"></script>
+    <script async src="./assets/js/user/manifest.js"></script>
+    <script async src="./assets/js/user/swHelper.js"></script>
 
     <!-- Jquery Scripts -->
-    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="./assets/js/jquery-3.2.1.min.js"></script>
 
     <!-- Materialize Scripts -->
-    <script src="assets/js/materialize.min.js"></script>
+    <script src="./assets/js/materialize.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js" integrity="sha256-uWtSXRErwH9kdJTIr1swfHFJn/d/WQ6s72gELOHXQGM=" crossorigin="anonymous"></script> -->
 
     <!-- Slick Slider Script -->
-    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
     <script>
         //Owl initiate
         function initWebinarOwl() {
@@ -376,13 +392,19 @@
                 autoplayHoverPause:true
             });
         }
-        //Materialize Initiate
-        // Initialize collapse button
-        $(".button-collapse").sideNav();
+        // Materialize Initiate
+            // Initialize collapse button
+            $(".button-collapse").sideNav();
+        // ServiceWorker & Push Register
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                navigator.serviceWorker.register('sw.js').catch(function(err) {
-                    console.log('ServiceWorker registration failed: ', err);
+                if ('PushManager' in window)
+                    showNotificationBell();
+                navigator.serviceWorker.register('sw.js', { scope: '/' }).then(function(registration) {
+                    return registration;
+                }).catch(function(Error) {
+                    hideNotificationBell();
+                    console.log('ServiceWorker registration failed: ', Error);
                 });
             });
         }

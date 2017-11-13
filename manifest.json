@@ -3,7 +3,7 @@
     "short_name": "ALiAS",
     "display": "standalone",
     "lang": "en-US",
-    "start_url": "manifest.html",
+    "start_url": "./manifest.html",
     "description": "ASET ALIAS Unofficial Website",
     "theme_color": "#5e8fca",
     "background_color": "#5e8fca",
