@@ -18,10 +18,10 @@
     <!-- Site favicon -->
     <link href="assets/images/favicon.webp" rel="shortcut icon">
     <link href="assets/images/favicon.webp" rel="apple-touch-icon">
-    <!-- Materialize Styles -->
-    <link href="assets/css/materialize.min.css" rel="stylesheet" />
     <!-- Bootstrap Styles -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Materialize Styles -->
+    <link href="assets/css/materialize.min.css" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css" integrity="sha256-lJMsOpLg+Hdzs297wkRxAhSlJdXcuHHyo/JoB4uI7uw=" crossorigin="anonymous" /> -->
     <!-- Owl Carousel Styles -->
     <link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
@@ -53,6 +53,7 @@
             <li><a onClick='showHome()'>Home</a></li>
             <li><a onClick='showJoinUs()'>Join Us</a></li>
             <li><a onClick='showEvents()'>Events</a></li>
+			<li><a onClick='showWebinars()'>Webinars</a></li>
             <li><a onClick='showTeam()'>Team</a></li>
           <li><a onClick='showAboutUs()'>About Us</a></li>
         </ul>
@@ -96,8 +97,7 @@
             <div class="siteAboutServices col-sm-6">
                 <!-- This section contains "Why should I join the club" details and Join Club link button -->
                 <div class="section-header subheader">
-                    <span class="bottom-border bottom-border-danger"><i class="fa fa-university iconMed" aria-hidden="true"></i><span class="heading">Why should I join ALiAS
-                        ?</span></span>
+                    <span class="bottom-border bottom-border-danger"><i class="fa fa-university iconMed" aria-hidden="true"></i><span class="heading">Why should I join the club?</span></span>
                 </div>
                 <p class="description">
                     Join the club and which is just not about certificates or designation(s): <br/>
@@ -118,7 +118,7 @@
             </div>
         </div>
         <div id='joinNowBtnContainer'class="row">
-            <a id="joinNowBtn" class="waves-effect waves-light btn-large" href="https://goo.gl/forms/mZAhlJMxqCwZVbRK2">Join Now</a>
+            <a id="joinNowBtn" class="btn btn-danger btn-semi-transparent" href="https://goo.gl/forms/mZAhlJMxqCwZVbRK2">Join Now</a>
         </div>
         <div class="row">
             <div class="col-lg-12 headerContainer">
@@ -242,9 +242,22 @@
                 Photography Partner:<a href="https://www.facebook.com/exposureamity/"><img src="assets/images/Exposure.webp" height="100px"/></a>
             </div>
         </div>
+		</div>
+		</section>
+		
+		<!-- Webinars Section -->
+		
+		<section  class="webinar-section background-overlay " >
+    <div class="container">
         <div class="row row-centered">
             <div class="col-lg-12 headerContainer col-centered">
-                <span class="bottom-border bottom-border-green center"><h1 class="section-header text-center eventsHeader">Previous Webinars</h1></span>
+                <span class="bottom-border bottom-border-danger center"><h1 " class="section-header  text-center ">Webinars</h1></span>
+            </div>
+        </div>
+		
+        <div class="row row-centered">
+            <div class="col-lg-12 headerContainer col-centered">
+                <span class="bottom-border bottom-border-danger  center"><h3 class="section-header text-center ">Previous Webinars</h3></span>
             </div>
         </div>
         <div class="row text-center" id="webinarsListContainer">
@@ -266,8 +279,11 @@
             </div>
         </div>
     </div>
+	</div>
+	</div>
 </section>
 <!-- Team Section -->
+
 <section id="team" class="team-section background-overlay">
     <div class="container">
         <div class="row row-centered">
@@ -340,19 +356,18 @@
             webinarsListContainer.classList.add("owl-carousel");
             webinarsListContainer.classList.add("owl-theme");
             $('#webinarsListContainer').owlCarousel({
-                items:1,
-                loop: true,
-                autoplay:true,
-                autoplayTimeout:3000,
-                autoplayHoverPause:true
+                autoWidth: true,
+                margin: 20
             });
         }
         function initTeamOwl() {
             teamListContainer.classList.add("owl-carousel");
             teamListContainer.classList.add("owl-theme");
             $('#teamListContainer').owlCarousel({
+                center: true,
                 items:1,
                 loop: true,
+                margin: 20,
                 autoplay:true,
                 autoplayTimeout:3000,
                 autoplayHoverPause:true
@@ -362,11 +377,8 @@
             eventPhotosContainer.classList.add("owl-carousel");
             eventPhotosContainer.classList.add("owl-theme");
             $('#eventPhotosContainer').owlCarousel({
-                items:1,
-                loop: true,
-                autoplay:true,
-                autoplayTimeout:3000,
-                autoplayHoverPause:true
+                autoWidth: true,
+                margin: 20
             });
         }
         //Materialize Initiate
