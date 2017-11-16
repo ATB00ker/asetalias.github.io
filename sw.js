@@ -4,47 +4,49 @@ var CACHE_NAME = '[v0.1.4] ALiAS';
 
 //Files to be Cached
 var urlsToCache = [
-    './',
+    'https://atb00ker.github.io/asetalias.github.io/',
     'https://fonts.googleapis.com/css?family=Pacifico|Quicksand|Dosis|Boogaloo',
-    './index.html',
-    './manifest.html',
-    './assets/js/user/manifest.js',
-    './assets/js/user/functions.js',
-    './assets/js/jquery-3.2.1.min.js',
-    './assets/js/materialize.min.js',
-    './assets/js/owl.carousel.min.js',
-    './assets/js/scrollreveal.min.js',
-    './assets/css/owl.carousel.min.css',
-    './assets/css/owl.theme.green.min.css',
-    './assets/css/materialize.min.css',
-    './assets/css/bootstrap.min.css',
-    './assets/css/user/main.css',
-    './assets/css/user/fonts.css',
-    './assets/css/user/manifest.css',
-    './assets/css/font-awesome.min.css',
-    './assets/images/events/default.webp',
-    './assets/images/ALiAS.webp',
-    './assets/images/Exposure.webp',
-    './assets/images/favicon.webp',
-    './assets/images/github-fork.webp',
-    './assets/images/home_bg.webp',
-    './assets/images/intro_bg-m.webp',
-    './assets/images/intro_bg.webp',
-    './assets/images/team_bg.webp',
-    './assets/images/webinarDefault.webp'
+    'https://atb00ker.github.io/asetalias.github.io/index.html',
+    'https://atb00ker.github.io/asetalias.github.io/manifest.html',
+    'https://atb00ker.github.io/asetalias.github.io/assets/js/user/manifest.js',
+    'https://atb00ker.github.io/asetalias.github.io/assets/js/user/functions.js',
+    'https://atb00ker.github.io/asetalias.github.io/assets/js/jquery-3.2.1.min.js',
+    'https://atb00ker.github.io/asetalias.github.io/assets/js/materialize.min.js',
+    'https://atb00ker.github.io/asetalias.github.io/assets/js/owl.carousel.min.js',
+    'https://atb00ker.github.io/asetalias.github.io/assets/js/scrollreveal.min.js',
+    'https://atb00ker.github.io/asetalias.github.io/assets/css/owl.carousel.min.css',
+    'https://atb00ker.github.io/asetalias.github.io/assets/css/owl.theme.green.min.css',
+    'https://atb00ker.github.io/asetalias.github.io/assets/css/materialize.min.css',
+    'https://atb00ker.github.io/asetalias.github.io/assets/css/bootstrap.min.css',
+    'https://atb00ker.github.io/asetalias.github.io/assets/css/user/main.css',
+    'https://atb00ker.github.io/asetalias.github.io/assets/css/user/fonts.css',
+    'https://atb00ker.github.io/asetalias.github.io/assets/css/user/manifest.css',
+    'https://atb00ker.github.io/asetalias.github.io/assets/css/font-awesome.min.css',
+    'https://atb00ker.github.io/asetalias.github.io/assets/images/events/default.webp',
+    'https://atb00ker.github.io/asetalias.github.io/assets/images/ALiAS.webp',
+    'https://atb00ker.github.io/asetalias.github.io/assets/images/Exposure.webp',
+    'https://atb00ker.github.io/asetalias.github.io/assets/images/favicon.webp',
+    'https://atb00ker.github.io/asetalias.github.io/assets/images/github-fork.webp',
+    'https://atb00ker.github.io/asetalias.github.io/assets/images/home_bg.webp',
+    'https://atb00ker.github.io/asetalias.github.io/assets/images/intro_bg-m.webp',
+    'https://atb00ker.github.io/asetalias.github.io/assets/images/intro_bg.webp',
+    'https://atb00ker.github.io/asetalias.github.io/assets/images/team_bg.webp',
+    'https://atb00ker.github.io/asetalias.github.io/assets/images/webinarDefault.webp'
 ];
 
 
+// Perform install steps
 self.addEventListener('install', function(event) {
-  // Perform install steps
   event.waitUntil(
     caches.open(CACHE_NAME).then(function(cache) {
         return cache.addAll(urlsToCache);
-      })
+    }).catch(function(Error) {
+        console.log(urlsToCache);
+    })
   );
 });
 
-
+// Activation is done Everytime a page loads!
 self.addEventListener('activate', function(event) {
     console.log('[ServiceWorker] Activated');
     event.waitUntil(
@@ -71,28 +73,49 @@ self.addEventListener('fetch', event => {
 });
 
 
+//Called Everytime a push notication is received!
+self.addEventListener('push', function(event) {
+    const title = event.data.json().title;
+    const options = {
+         body: event.data.json().body,
+         badge: event.data.json().badge,
+         icon: event.data.json().icon
+    };
+    const notificationPromise = self.registration.showNotification(title, options);
+    event.waitUntil(notificationPromise);
+});
+
+
+self.addEventListener('message', function(event){
+    if (event.data == 'isHomePermitted') {
+        if(deferredPrompt == null)
+            event.ports[0].postMessage("No");
+        else
+            event.ports[0].postMessage("Yes");
+    } else if (event.data == 'showDefferedPrompt') {
+        showDefferedPrompt();
+    }
+});
+
+
+var deferredPrompt;
 // Deffering Prompt to when user clicks the home button!
 self.addEventListener('beforeinstallprompt', function(event) {
+    deferredPrompt = event;
     event.preventDefault();
-    insertEventInIndexedDB(event);
+    insertEventInIndexedDB();
     return false;
 });
 
 
-//Insert Prompt event in indexedDB
-function insertEventInIndexedDB(event) {
-    var cursor = indexedDB.open("ALiAS", 1);
-    cursor.onupgradeneeded = function() {
-        var database = cursor.result;
-        var serviceWorker = database.createObjectStore("serviceWorker", {keyPath: "id"});
-    };
-    cursor.onsuccess = function() {
-        var database = cursor.result;
-        var transaction = database.transaction("serviceWorker", "readwrite");
-        var store = transaction.objectStore("serviceWorker");
-        store.put({id: 1, deferredPrompt: event});
-        transaction.oncomplete = function() {
-            database.close();
-        };
-    }
+// Adding Web Application to Home Screen Prompt.
+function showDefferedPrompt() {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(function(choiceResult) {
+        console.log(choiceResult.outcome);
+        if(choiceResult.outcome == 'dismissed')
+            console.log('User cancelled home screen install');
+        else
+            defferedPrompt = null;
+    });
 }

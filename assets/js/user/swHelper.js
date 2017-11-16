@@ -10,7 +10,6 @@ function pushPermission() {
         subscribeUserToPush();
     })
 }
-
 // Subscribe to Push
 function subscribeUserToPush() {
     hideNotificationBell();
@@ -19,12 +18,14 @@ function subscribeUserToPush() {
         userVisibleOnly: true,
         applicationServerKey: urlBase64ToUint8Array('BKNmZNhH7cszaNYeHKxwf7fnb56EW84vRCiWD4P_HkwQUcAC5lWGbJXac0IMIQKHq6zekdImGimQ49SFAWEmIc0')};
         return serviceWorkerRegistration.pushManager.subscribe(subscribeOptions);
-    }).then(function() {
+    }).then(function(pushSubscription) {
+        var formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScbQRYw3xAwnJ66-C3NJg0H7VKwnjskL1-WDTSiu0Xrr0P47A/formResponse?usp=pp_url&entry.1105693128="+JSON.stringify(pushSubscription)+"&submit=Submit";
+        document.getElementById('formIframe').innerHTML = "<iframe class='hidden' src="+formUrl+"></iframe>";
         showNotificationBell();
     });
 }
 
-
+// Unsubscribe to Push
 function unsubscribeUserToPush() {
     hideNotificationBell();
     navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
@@ -77,56 +78,35 @@ function showNotificationBell() {
     });
 }
 
+
 function hideNotificationBell() {
     var notificationIconContainer = document.getElementById('notificationIconContainer');
     notificationIconContainer.innerHTML = "<i style='color: #9F9F9F' class='settingIcons fa fa-bell-slash'></i>";
 }
 
-var deferredPrompt;
-function showHome(eventContainer) {
-    var notificationIconContainer = document.getElementById('homeIconContainer');
-    notificationIconContainer.innerHTML = "<i style='margin-top: -5px;font-size: 30px;' onclick='initDefferedPrompt()' class='settingIcons fa fa-home'></i>";
-    deferredPrompt = eventContainer;
+// Show home icon if defferedPrompt contains event, else remove it!
+function isHomePermitted() {
+    if(navigator.serviceWorker.controller) {
+        return new Promise(function(resolve, reject) {
+            var msgChannel = new MessageChannel();
+            msgChannel.port1.onmessage = function(event) {
+                if(event.data.error) {reject(event.data.error);}
+                else{resolve(event.data);}
+            };
+            navigator.serviceWorker.controller.postMessage("isHomePermitted", [msgChannel.port2]);
+        }).then(message => showHomeIcon(message));
+    }
 }
 
-function hideHome() {
-    var notificationIconContainer = document.getElementById('homeIconContainer');
-    notificationIconContainer.innerHTML = "";
+
+function showHomeIcon(permissionStatus) {
+    if (permissionStatus == 'Yes')
+        document.getElementById('homeIconContainer').innerHTML = "<i style='margin-top: -5px;font-size: 30px;' onclick='navigator.serviceWorker.controller.postMessage(\"showDefferedPrompt\");' class='settingIcons fa fa-home'></i>";
+    else
+        hideHomeIcon();
 }
 
-// Adding Web Application to Home Screen Prompt.
-function initDefferedPrompt() {
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(function(choiceResult) {
-        console.log(choiceResult.outcome);
-        if(choiceResult.outcome == 'dismissed')
-        console.log('User cancelled home screen install');
-        else
-        console.log('User added to home screen');
-    });
-}
 
-/*******************************
-* IndexedDB API
-*******************************/
-//indexedDB declarations.
-var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
-var cursor = indexedDB.open("ALiAS", 1);
-cursor.onupgradeneeded = function() {
-    var database = cursor.result;
-    var serviceWorker = database.createObjectStore("serviceWorker", {keyPath: "id"});
-};
-cursor.onsuccess = function(key) {
-    var database = cursor.result;
-    var transaction = database.transaction("serviceWorker", "readwrite");
-    var store = transaction.objectStore("serviceWorker");
-    var response = store.get(1);
-    return response.onsuccess = function() {
-        if(response.result) {
-             showHome(response.result.deferredPrompt);
-        }
-    };
-    transaction.oncomplete = function() {
-        database.close();
-    };
+function hideHomeIcon() {
+    document.getElementById('homeIconContainer').innerHTML = "";
 }
