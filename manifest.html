@@ -339,6 +339,7 @@
     </div>
 </section>
 </article>
+<div class='hidden' id='formIframe'></div>
 
     <!-- scrollreveal Script -->
     <script async src="./assets/js/scrollreveal.min.js"></script>
@@ -400,12 +401,14 @@
             window.addEventListener('load', function() {
                 if ('PushManager' in window)
                     showNotificationBell();
+                else
+                    hideNotificationBell();
                 navigator.serviceWorker.register('sw.js', { scope: '/' }).then(function(registration) {
                     return registration;
                 }).catch(function(Error) {
                     hideNotificationBell();
                     console.log('ServiceWorker registration failed: ', Error);
-                });
+                }).then(isHomePermitted());
             });
         }
     </script>
