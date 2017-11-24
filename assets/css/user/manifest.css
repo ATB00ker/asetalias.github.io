@@ -6,6 +6,26 @@ nav {
     -webkit-box-shadow: 2px 2px 15px #979696!important;
     box-shadow: 2px 2px 15px #979696!important;
 }
+nav .button-collapse {
+    height: 100%;
+}
+nav .button-collapse i {
+    height: 100%;
+    line-height: 100%;
+}
+#settingIcon {
+    text-align: right;
+    font-size: 25px;
+    float: right;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    color: #000;
+}
+section .headerContainer {
+    margin: 40px 0px 50px 0px!important;
+
+}
 #home{
     display: block;
     width: inherit;
@@ -22,6 +42,10 @@ nav {
     -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
     -moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
     box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    background-image: none!important;
+}
+#introTxt {
+    color: #000;
 }
 #section_joinUs {
     display: none;
@@ -44,21 +68,15 @@ nav {
 }
 .siteAboutServices{
     padding-top: 32px;
-}
-.siteAboutServices .section-header{
-    color: #000!important;
+    max-width: 570px;
 }
 #joinNowBtn{
     padding: 0;
     width: 100%;
+    max-width: 570px;
     color: #fff;
     font-size: 20px;
     font-family: 'Boogaloo', cursive;
-}
-#footer{
-    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2)!important;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2)!important;
-	height: 17vh;
 }
 .teamBox{
     padding: 10px 0;
@@ -67,23 +85,52 @@ nav {
     margin: 0;
 }
 #settingsTray{
+    position: relative;
     padding-bottom: 40px;
-    padding-top: 14px;
+    margin-top: 14px;
     padding-right: 5px;
     line-height: 24px;
+    margin-bottom: 20px;
+    vertical-align: middle;
 }
-.settingIcons{
-    text-align: right;
+#settingsPage {
+    display: none;
+    width: inherit;
+	height: 73vh;
+    -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    -moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+    background-color: #fff;
+}
+.toggleIcons {
+    text-align: left;
     font-size: 25px;
-    color: black;
-    float: right;
-    height: 1px!important;
+    float: left;
     padding-left: 10px;
     padding-right: 10px;
+    margin-top: 25px;
+    margin-bottom: 10px;
 }
-#connectionStatus{
-    text-align: center;
-    font-size: 16px;
-    color: #fff;
+#notificationChannelForm {
+    margin-left: 25px;
+}
+.notificationChannelListItem {
+    text-align: left;
+    width: 100%;
+    float: left;
+    font-size: 20px!important;
+    margin-bottom: 5px;
+    font-family:'FontAwesome';
+}
+.toast{
     font-family: 'Dosis', sans-serif;
+}
+#footer{
+    -webkit-box-shadow:0px 20px 20px 18px rgba(0,0,0,0.8);
+    -moz-box-shadow:0px 20px 20px 18px rgba(0,0,0,0.8);
+    box-shadow:0px 20px 20px 18px rgba(0,0,0,0.8);
+	height: 17vh;
+}
+#footer .container {
+    height: 100%;
 }

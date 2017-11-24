@@ -4,6 +4,7 @@ function showHome() {
     document.getElementById('section_joinUs').style.display = "none";
     document.getElementById('events').style.display = "none";
     document.getElementById('team').style.display = "none";
+    document.getElementById('settingsPage').style.display = "none";
     $('button-collapse').sideNav('hide');
 }
 function showAboutUs() {
@@ -12,6 +13,7 @@ function showAboutUs() {
     document.getElementById('section_joinUs').style.display = "none";
     document.getElementById('events').style.display = "none";
     document.getElementById('team').style.display = "none";
+    document.getElementById('settingsPage').style.display = "none";
     $('.button-collapse').sideNav('hide');
 }
 function showJoinUs(){
@@ -20,6 +22,7 @@ function showJoinUs(){
     document.getElementById('section_joinUs').style.display = "block";
     document.getElementById('events').style.display = "none";
     document.getElementById('team').style.display = "none";
+    document.getElementById('settingsPage').style.display = "none";
     $('.button-collapse').sideNav('hide');
 }
 function showEvents(){
@@ -28,6 +31,7 @@ function showEvents(){
     document.getElementById('section_joinUs').style.display = "none";
     document.getElementById('events').style.display = "block";
     document.getElementById('team').style.display = "none";
+    document.getElementById('settingsPage').style.display = "none";
     $('.button-collapse').sideNav('hide');
 }
 function showTeam(){
@@ -36,5 +40,15 @@ function showTeam(){
     document.getElementById('section_joinUs').style.display = "none";
     document.getElementById('events').style.display = "none";
     document.getElementById('team').style.display = "block";
+    document.getElementById('settingsPage').style.display = "none";
+    $('.button-collapse').sideNav('hide');
+}
+function showSettingsPage(){
+    document.getElementById('home').style.display = "none";
+    document.getElementById('intro').style.display = "none";
+    document.getElementById('section_joinUs').style.display = "none";
+    document.getElementById('events').style.display = "none";
+    document.getElementById('team').style.display = "none";
+    document.getElementById('settingsPage').style.display = "block";
     $('.button-collapse').sideNav('hide');
 }

@@ -246,7 +246,8 @@ img.logo-lg{
 	}
 }
 .iconMed{
-    font-size:24px;
+    font-size: 35px;
+    padding-right: 10px;
 }
 .animated-pulse{
 	animation-name: animated-pulse;
@@ -432,7 +433,8 @@ section .section-header{
 	box-sizing:border-box;
 	color:#000;
 	text-align:center;
-	top:0;bottom: 0;
+	top:0;
+	bottom: 0;
 }
 /** Event Box Styles **/
 .eventBox div{
@@ -477,8 +479,8 @@ section .section-header{
 }
 .eventBox .eventCTA{
     margin-top: 10px;
-	bottom:5px;
-	width:100%;
+    bottom:5px;
+    width:100%;
 }
 .eventBox .eventCTA div{
 	float:left;
@@ -488,11 +490,11 @@ section .section-header{
 	padding: 0;
 }
 .eventBox .eventCTA button{
+	margin-top: 10px!important;
 	text-align: center;
 	width:100%;
 	font-size:16px;
-	margin-bottom: 10px;
-	color:#FFF;
+	: px
 }
 .eventBox .event-buttons{
     position: relative;
@@ -798,7 +800,7 @@ section .section-header{
 #footer .widgetContent{
 	width: 100%;
 	overflow:hidden;
-	margin: 8px 0px;
+	/* margin: 8px 0px; */
 }
 #footer div.divider-top{
 	border-top:2px solid #979696;
@@ -816,11 +818,16 @@ section .section-header{
 }
 .contactLinksContainer li i.fa{
     font-size: 30px;
-	width: 1em;
-	height: 1em;
-	top: 0;
-	left: 0;
-	margin-top:0.2em;
+    width: 1em;
+    height: 1em;
+    top: 0;
+    left: 0;
+    margin-top:0.2em;
+}
+@media all and (min-width: 756px) {
+    .contactLinksContainer li i.fa {
+        font-size: 50px;
+    }
 }
 .contactLinksContainer li a{
 	font-size:16px;

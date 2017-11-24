@@ -1,37 +1,37 @@
 //Latest CACHE_NAME
-var CACHE_NAME = '[v0.1.4] ALiAS';
+var CACHE_NAME = '[v0.1.5] ALiAS';
 
 
 //Files to be Cached
 var urlsToCache = [
-    'https://atb00ker.github.io/asetalias.github.io/',
     'https://fonts.googleapis.com/css?family=Pacifico|Quicksand|Dosis|Boogaloo',
-    'https://atb00ker.github.io/asetalias.github.io/index.html',
-    'https://atb00ker.github.io/asetalias.github.io/manifest.html',
-    'https://atb00ker.github.io/asetalias.github.io/assets/js/user/manifest.js',
-    'https://atb00ker.github.io/asetalias.github.io/assets/js/user/functions.js',
-    'https://atb00ker.github.io/asetalias.github.io/assets/js/jquery-3.2.1.min.js',
-    'https://atb00ker.github.io/asetalias.github.io/assets/js/materialize.min.js',
-    'https://atb00ker.github.io/asetalias.github.io/assets/js/owl.carousel.min.js',
-    'https://atb00ker.github.io/asetalias.github.io/assets/js/scrollreveal.min.js',
-    'https://atb00ker.github.io/asetalias.github.io/assets/css/owl.carousel.min.css',
-    'https://atb00ker.github.io/asetalias.github.io/assets/css/owl.theme.green.min.css',
-    'https://atb00ker.github.io/asetalias.github.io/assets/css/materialize.min.css',
-    'https://atb00ker.github.io/asetalias.github.io/assets/css/bootstrap.min.css',
-    'https://atb00ker.github.io/asetalias.github.io/assets/css/user/main.css',
-    'https://atb00ker.github.io/asetalias.github.io/assets/css/user/fonts.css',
-    'https://atb00ker.github.io/asetalias.github.io/assets/css/user/manifest.css',
-    'https://atb00ker.github.io/asetalias.github.io/assets/css/font-awesome.min.css',
-    'https://atb00ker.github.io/asetalias.github.io/assets/images/events/default.webp',
-    'https://atb00ker.github.io/asetalias.github.io/assets/images/ALiAS.webp',
-    'https://atb00ker.github.io/asetalias.github.io/assets/images/Exposure.webp',
-    'https://atb00ker.github.io/asetalias.github.io/assets/images/favicon.webp',
-    'https://atb00ker.github.io/asetalias.github.io/assets/images/github-fork.webp',
-    'https://atb00ker.github.io/asetalias.github.io/assets/images/home_bg.webp',
-    'https://atb00ker.github.io/asetalias.github.io/assets/images/intro_bg-m.webp',
-    'https://atb00ker.github.io/asetalias.github.io/assets/images/intro_bg.webp',
-    'https://atb00ker.github.io/asetalias.github.io/assets/images/team_bg.webp',
-    'https://atb00ker.github.io/asetalias.github.io/assets/images/webinarDefault.webp'
+    './index.html',
+    './manifest.html',
+    './assets/js/user/manifest.js',
+    './assets/js/user/functions.js',
+    './assets/js/user/swHelper.js',
+    './assets/js/jquery-3.2.1.min.js',
+    './assets/js/materialize.min.js',
+    './assets/js/owl.carousel.min.js',
+    './assets/js/scrollreveal.min.js',
+    './assets/css/owl.carousel.min.css',
+    './assets/css/owl.theme.green.min.css',
+    './assets/css/materialize.min.css',
+    './assets/css/bootstrap.min.css',
+    './assets/css/user/main.css',
+    './assets/css/user/fonts.css',
+    './assets/css/user/manifest.css',
+    './assets/css/font-awesome.min.css',
+    './assets/images/events/default.webp',
+    './assets/images/ALiAS.webp',
+    './assets/images/Exposure.webp',
+    './assets/images/favicon.webp',
+    './assets/images/github-fork.webp',
+    './assets/images/home_bg.webp',
+    './assets/images/intro_bg-m.webp',
+    './assets/images/intro_bg.webp',
+    './assets/images/team_bg.webp',
+    './assets/images/webinarDefault.webp'
 ];
 
 
@@ -73,16 +73,22 @@ self.addEventListener('fetch', event => {
 });
 
 
+var notificationSubscriptionList;
 //Called Everytime a push notication is received!
 self.addEventListener('push', function(event) {
-    const title = event.data.json().title;
-    const options = {
-         body: event.data.json().body,
-         badge: event.data.json().badge,
-         icon: event.data.json().icon
-    };
-    const notificationPromise = self.registration.showNotification(title, options);
-    event.waitUntil(notificationPromise);
+    // Check if channel is permitted by User
+    const notificationChannel = event.data.json().channel;
+    var showNotification;
+    if (notificationSubscriptionList[notificationChannel] == true) {
+        const title = event.data.json().title;
+        const options = {
+             body: event.data.json().body,
+             badge: event.data.json().badge,
+             icon: event.data.json().icon
+        };
+        const notificationPromise = self.registration.showNotification(title, options);
+        event.waitUntil(notificationPromise);
+    }
 });
 
 
@@ -94,6 +100,14 @@ self.addEventListener('message', function(event){
             event.ports[0].postMessage("Yes");
     } else if (event.data == 'showDefferedPrompt') {
         showDefferedPrompt();
+    } else if (event.data == 'SubscribedChannels') {
+        if(notificationSubscriptionList == null)
+            event.ports[0].postMessage(JSON.stringify({"nofificationSubscriptionList": false}));
+        else
+            event.ports[0].postMessage(JSON.stringify(notificationSubscriptionList));
+    } else if (isJSONObject(event.data) == true) {
+        if (JSON.parse(event.data)["nofificationSubscriptionList"] == true)
+            notificationSubscriptionList = JSON.parse(event.data);
     }
 });
 
@@ -118,4 +132,15 @@ function showDefferedPrompt() {
         else
             defferedPrompt = null;
     });
+}
+
+// Helping functions
+function isJSONObject(message) {
+    try {
+        JSON.parse(message);
+        return true;
+    }
+    catch(e) {
+        return false;
+    }
 }
