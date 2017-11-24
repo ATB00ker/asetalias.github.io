@@ -11,6 +11,7 @@ These rules are to be followed when making a PR in the master branch
 - Serve materialize.css from "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css".
 - Make main.css, fonts.css and manifest.css as internal styles. (Note: Remember to change the path for images in the css styles)
 - Serve materilize.js as "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js".
+- Merge swHelper.js and Manifest.js into one file. remove swHelper.js call from manifest.html
 - Minify the final manifest.html and index.html files.
 - Run and Check if everything is functional. (Make Issue if any error occur)
 - Make sure the pull request on master contains [V{{Version.Number}}.{{Version.MajorUpdate.Number}}.{{Version.MinorUpdate/BugFix.Number}}] {{Pull Request Title}}.
