@@ -40,7 +40,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body id="page-top" data-spy="scroll">
+<body onload='metaData()' id="page-top" data-spy="scroll">
 <article id="contentWrap" class="auto-center">
     <div class="minScreenSizeOverlay">
         <div class="contentContainer">
@@ -410,7 +410,7 @@
         // ServiceWorker & Push Register
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                navigator.serviceWorker.register('sw.js', { scope: '/' }).then(function(registration) {
+                navigator.serviceWorker.register('./sw.js').then(function(registration) {
                     return registration;
                 }).catch(function(Error) {
                     console.log('ServiceWorker registration failed: ', Error);

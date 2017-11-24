@@ -18,7 +18,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="#5e8fca">
         <meta name="apple-mobile-web-app-title" content="ALiAS">
-        <!-- Browser tab theme color for Chrome on Android IOS -->
+        <!-- Browser tab theme color for Chrome on Windows -->
         <meta name="msapplication-TileImage" content="./assets/images/favicon.webp">
         <meta name="msapplication-TileColor" content="#5e8fca">
     <!-- Font Awesome Icons -->
@@ -44,9 +44,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body id="page-top" data-spy="scroll">
+<body onload='metaData()' id="page-top" data-spy="scroll">
 <article id="contentWrap" class="auto-center">
-    <div id='connectionStatus'></div>
     <div class="minScreenSizeOverlay">
         <div class="contentContainer">
             <div class="content">
@@ -64,11 +63,7 @@
                         <img src="./assets/images/events/default.webp" align="middle" hieght="100%" width="100%">
                     </div>
                         <img class="circle" src="./assets/images/ALiAS.webp">
-                        <div id='settingsTray'>
-                            <!-- Element Styles Inside settingsTray are used to put all the items in a line!  -->
-                            <span id='notificationIconContainer'></span>
-                            <span id='homeIconContainer'></span>
-                        </div>
+                        <div id='settingsTray' aria-label="settings"><i onclick='showSettingsPage()' id='settingIcon' class="fa fa-cog" aria-hidden="true"></i></div>
                 </div>
             </li>
             <li><a class="waves-effect" onClick='showHome()'>Home</a></li>
@@ -78,7 +73,7 @@
             <li><div class="divider"></div></li>
             <li><a class="waves-effect" onClick='showAboutUs()'>About Us</a></li>
         </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="fa fa-bars"></i></a>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="valign-wrapper fa fa-bars"></i></a>
       </div>
     </nav>
 <section id="home" class="home-section">
@@ -91,19 +86,19 @@
 <section id="intro" class="intro-section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 headerContainer">
+            <div class="col-centered col-lg-12 headerContainer">
                 <span class="bottom-border bottom-border-danger center">
-                    <h1 class="siteAboutContainer animated section-header">
+                    <h1 class="black-text siteAboutContainer animated section-header">
                         <strong class="text-danger">A</strong>mity <strong class="text-danger">Li</strong>nux <strong class="text-danger">A</strong>ssitance <strong class="text-danger">S</strong>apience
                     </h1>
                 </span>
             </div>
         </div>
         <div class="row  text-left siteAboutMore animated">
-            <div class="siteAboutHistory col-sm-6">
+            <div class="siteAboutHistory col-sm-12">
                 <!-- This div contains "How the club came to be?" -->
                 <div class="section-header subheader">
-                    <span class="bottom-border bottom-border-danger"><i class="fa fa-flag iconMed" aria-hidden="true"></i><span class="heading">The Journey</span></span>
+                    <span class="bottom-border bottom-border-danger"><i class="black-text fa fa-flag iconMed" aria-hidden="true"></i><span class="black-text heading">The Journey</span></span>
                 </div>
                 <p id='introTxt'>
                     Started back in 2010; With main aim to foster the growth of use of Linux for the developers in the campus and to promote the culture of hacking and sharing.<br>ALiAS is now a platform for upcoming developers for finding exposure by meeting the people working in related industries, learning various languages and becoming a better developer
@@ -115,9 +110,9 @@
 <section id="section_joinUs">
     <div class="container">
         <div class="row">
-            <div class="siteAboutServices col-sm-6">
+            <div class="col-centered siteAboutServices col-sm-12">
                 <!-- This section contains "Why should I join the club" details and Join Club link button -->
-                <div class="section-header subheader">
+                <div class="black-text section-header subheader">
                     <span class="bottom-border bottom-border-danger"><i class="fa fa-university iconMed" aria-hidden="true"></i><span class="heading">Why should I join ALiAS
                         ?</span></span>
                 </div>
@@ -143,9 +138,9 @@
             <a id="joinNowBtn" class="waves-effect waves-light btn-large" href="https://goo.gl/forms/mZAhlJMxqCwZVbRK2">Join Now</a>
         </div>
         <div class="row">
-            <div class="col-lg-12 headerContainer">
+            <div class="col-centered col-lg-12 col-lg-12 headerContainer">
                 <span class="bottom-border bottom-border-danger center">
-                    <h1 class="siteAboutContainer animated section-header">
+                    <h1 class="black-text siteAboutContainer animated section-header">
                         OpenSource Communities of Delhi & NCR
                     </h1>
                 </span>
@@ -174,9 +169,9 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12 headerContainer">
+            <div class="col-centered col-lg-12 col-lg-12 headerContainer">
                 <span class="bottom-border bottom-border-danger center">
-                    <h1 class="siteAboutContainer animated section-header">
+                    <h1 class="black-text siteAboutContainer animated section-header">
                         Helpful Links
                     </h1>
                 </span>
@@ -294,7 +289,7 @@
     <div class="container">
         <div class="row row-centered">
             <div class="col-lg-12 headerContainer col-centered">
-                <span class="bottom-border bottom-border-success center"><h1 class="section-header" id="teamHeader">Meet Our Team</h1></span>
+                <span class="white-text bottom-border bottom-border-success center"><h1 class="section-header" id="teamHeader">Meet Our Team</h1></span>
             </div>
         </div>
         <div class="row teamList row-centered" id='teamListContainer'>
@@ -310,32 +305,53 @@
         </div>
     </div>
 </section>
-<section id="footer">
-    <div class="container">
-        <div class="widgetArea col-sm-4">
-            <div class="widgetContent">
-                <ul class="col-xs-12 contactLinksContainer text-left">
-                    <li class='col-xs-2'>
-                        <a href="mailto:contactasetalias@gmail.com" target="_blank"><i class="fa icon-grey fa-envelope text-green"></i></a>
-                    </li>
-                    <li class='col-xs-2'>
-                        <a href="https://github.com/asetalias" target="_blank"><i class="fa icon-grey fa-github text-grey"></i></a>
-                    </li>
-                    <li class='col-xs-2'>
-                        <a href="https://www.youtube.com/channel/UCKkyqEMLFW3jz-q3nJIFL3g" target="_blank"><i class="fa icon-grey fa-youtube text-red"></i></a>
-                    </li>
-                    <li class='col-xs-2'>
-                        <a href="https://www.facebook.com/asetalias/" target="_blank"><i class="fa icon-grey fa-facebook text-blue"></i></a>
-                    </li>
-                    <li class='col-xs-2'>
-                        <a href="https://groups.google.com/forum/#!forum/amity-linux-group" target="_blank"><i class="fa icon-grey fa-google-plus-square text-yellow"></i></a>
-                    </li>
-                    <li class='col-xs-2'>
-                        <a href="https://github.com/ATB00ker/asetalias.github.io" target="_blank"><i class="fa fa-code-fork" aria-hidden="true"></i></a>
-                    </li>
-                </ul>
-            </div>
+<!-- Settings Page Section -->
+<section id="settingsPage">
+    <div class='container'>
+        <div class='row col-xs-12 col-sm-4 col-md-3 col-lg-2 col-centered'>
+            <!-- Element Styles Inside settingsTray are used to put all the items in a line!  -->
+            <div class='row' id='notificationIconContainer'></div>
+            <form id='notificationChannelForm' action="#">
+                <div>
+                    <input onclick='notificationChannelSubscription()' id='notificationChannelEvents' aria-label="Event" type="checkbox" class="filled-in"/>
+                    <label class='notificationChannelListItem' for="notificationChannelEvents">Events</label>
+                </div>
+                <div>
+                    <input onclick='notificationChannelSubscription()' id='notificationChannelWebinars' aria-label="Webinar"  type="checkbox" class="filled-in"/>
+                    <label class='notificationChannelListItem' for="notificationChannelWebinars">Webinars</label>
+                </div>
+                <div>
+                    <input onclick='notificationChannelSubscription()' id='notificationChannelProjects' aria-label="Projects"  type="checkbox" class="filled-in"/>
+                    <label class='notificationChannelListItem' for="notificationChannelProjects">Projects</label>
+                </div>
+            </form>
+            <div class='row' id='homeIconContainer'></div>
         </div>
+    </div>
+</section>
+<!-- footer section -->
+<section id="footer">
+    <div class="valign-wrapper container">
+        <ul class="col-xs-12 contactLinksContainer text-left">
+            <li class='col-xs-2'>
+                <a href="mailto:contactasetalias@gmail.com" target="_blank"><i class="fa icon-grey fa-envelope text-green"></i></a>
+            </li>
+            <li class='col-xs-2'>
+                <a href="https://github.com/asetalias" target="_blank"><i class="fa icon-grey fa-github text-grey"></i></a>
+            </li>
+            <li class='col-xs-2'>
+                <a href="https://www.youtube.com/channel/UCKkyqEMLFW3jz-q3nJIFL3g" target="_blank"><i class="fa icon-grey fa-youtube text-red"></i></a>
+            </li>
+            <li class='col-xs-2'>
+                <a href="https://www.facebook.com/asetalias/" target="_blank"><i class="fa icon-grey fa-facebook text-blue"></i></a>
+            </li>
+            <li class='col-xs-2'>
+                <a href="https://groups.google.com/forum/#!forum/amity-linux-group" target="_blank"><i class="fa icon-grey fa-google-plus-square text-yellow"></i></a>
+            </li>
+            <li class='col-xs-2'>
+                <a href="https://github.com/ATB00ker/asetalias.github.io" target="_blank"><i class="fa fa-code-fork" aria-hidden="true"></i></a>
+            </li>
+        </ul>
     </div>
 </section>
 </article>
@@ -368,7 +384,12 @@
                 loop: true,
                 autoplay:true,
                 autoplayTimeout:3000,
-                autoplayHoverPause:true
+                autoplayHoverPause:true,
+                responsive: {
+                    0: {items:1},
+                    768 : {items:2},
+                    1100 : {items:3}
+                }
             });
         }
         function initTeamOwl() {
@@ -386,11 +407,16 @@
             eventPhotosContainer.classList.add("owl-carousel");
             eventPhotosContainer.classList.add("owl-theme");
             $('#eventPhotosContainer').owlCarousel({
-                items:1,
                 loop: true,
                 autoplay:true,
                 autoplayTimeout:3000,
-                autoplayHoverPause:true
+                autoplayHoverPause:true,
+                responsive: {
+                    0: {items:1},
+                    552 : {items:2},
+                    768 : {items:3},
+                    1100 : {items:5}
+                }
             });
         }
         // Materialize Initiate
