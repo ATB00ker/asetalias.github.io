@@ -52,3 +52,19 @@ function showSettingsPage(){
     document.getElementById('settingsPage').style.display = "block";
     $('.button-collapse').sideNav('hide');
 }
+// Check if user is online or not!
+function isOnline () {
+  if (navigator.onLine){
+    Materialize.Toast.removeAll();
+    var offlineHideElements =  document.getElementsByClassName('offlineHidden');
+    for (counter = 0; counter < offlineHideElements.length; counter++)
+        offlineHideElements[counter].style.display = "block";
+  } else {
+    Materialize.toast('You are currently offline. Data you are viewing might be outdated!', 30000);
+    var offlineHideElements =  document.getElementsByClassName('offlineHidden');
+    for (counter = 0; counter < offlineHideElements.length; counter++)
+        offlineHideElements[counter].style.display = "none";
+  }
+}
+window.addEventListener('online', isOnline);
+window.addEventListener('offline', isOnline);

@@ -170,15 +170,3 @@ function urlBase64ToUint8Array(base64String) {
         outputArray[i] = rawData.charCodeAt(i);
     return outputArray;
 }
-
-// Check if user is online or not!
-function isOnline () {
-  if (navigator.onLine){
-    var $toastContent = $('<span>I am toast content</span>').add($('<button class="btn-flat toast-action">Undo</button>'));
-    Materialize.Toast.removeAll();
-  } else {
-    Materialize.toast('You are currently offline. Data you are viewing might be outdated!', 30000);
-  }
-}
-window.addEventListener('online', isOnline);
-window.addEventListener('offline', isOnline);
