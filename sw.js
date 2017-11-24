@@ -93,7 +93,7 @@ self.addEventListener('push', function(event) {
 
 self.addEventListener('notificationclick', function(event) {
   event.notification.close();
-  const urlToOpen = new URL('manifest.html', self.location.origin).href;
+  const urlToOpen = new URL('asetalias.github.io/manifest.html', self.location.origin).href;
   const promiseChain = clients.matchAll({
     type: 'window',
     includeUncontrolled: true

@@ -14,6 +14,8 @@ function pushPermission() {
         });
     })
 }
+
+
 // Subscribe to Push
 function subscribeUserToPush() {
     hideNotificationBell();
@@ -33,17 +35,20 @@ function subscribeUserToPush() {
     });
 }
 
+
 // Unsubscribe to Push
 function unsubscribeUserToPush() {
     hideNotificationBell();
     navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
         serviceWorkerRegistration.pushManager.getSubscription().then(function(subscription) {
-            return subscription.unsubscribe();
+            if(subscription)
+                return subscription.unsubscribe();
         }).then(function() {
             showNotificationBell();
         });
     });
 }
+
 
 // Hide Notification Bell if Push API or Sync API is not supported.
 function showNotificationBell() {
@@ -86,6 +91,7 @@ function hideNotificationBell() {
     }
 }
 
+
 function notificationChannelSubscription() {
     navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
         var channelSubscriptionList = {
@@ -98,6 +104,7 @@ function notificationChannelSubscription() {
         navigator.serviceWorker.controller.postMessage(JSON.stringify(channelSubscriptionList), [msgChannel.port2]);
     });
 }
+
 
 // Show channels Subscribed by user on page load!
 getSubscribedChannels();
@@ -127,7 +134,6 @@ function getSubscribedChannels() {
 /*******************************
 * Web App API
 *******************************/
-
 // Show home icon if defferedPrompt contains event, else remove it!
 function isHomePermitted() {
     if(navigator.serviceWorker.controller) {
@@ -159,7 +165,6 @@ function hideHomeIcon() {
 /*******************************
 * Helping Functions
 *******************************/
-
 //Convert url(Base64) to an array
 function urlBase64ToUint8Array(base64String) {
     const padding = '='.repeat((4 - base64String.length % 4) % 4);
