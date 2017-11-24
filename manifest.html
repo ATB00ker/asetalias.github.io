@@ -60,20 +60,20 @@
             <li>
                 <div class="user-view">
                     <div class="background">
-                        <img src="./assets/images/events/default.webp" align="middle" hieght="100%" width="100%">
+                        <img alt='Background-Logo-Image' src="./assets/images/events/default.webp" align="middle" hieght="100%" width="100%">
                     </div>
-                        <img class="circle" src="./assets/images/ALiAS.webp">
+                        <img alt='Logo' class="circle" src="./assets/images/ALiAS.webp">
                         <div id='settingsTray' aria-label="settings"><i onclick='showSettingsPage()' id='settingIcon' class="fa fa-cog" aria-hidden="true"></i></div>
                 </div>
             </li>
             <li><a class="waves-effect" onClick='showHome()'>Home</a></li>
             <li><a class="waves-effect" onClick='showJoinUs()'>Join Us</a></li>
             <li><a class="waves-effect" onClick='showEvents()'>Events</a></li>
-            <li><a class="waves-effect" onClick='showTeam()'>Team</a></li>
+            <li class='offlineHidden'><a class="waves-effect" onClick='showTeam()'>Team</a></li>
             <li><div class="divider"></div></li>
             <li><a class="waves-effect" onClick='showAboutUs()'>About Us</a></li>
         </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="valign-wrapper fa fa-bars"></i></a>
+        <a aria-label="navigation bar" href="#" data-activates="nav-mobile" class="button-collapse"><i class="valign-wrapper fa fa-bars"></i></a>
       </div>
     </nav>
 <section id="home" class="home-section">
@@ -220,7 +220,7 @@
                     </div>
                     <div class="row eventCTA">
                         <div class="col-xs-12 text-center">
-                            <a href="mailTo:ajay39in@gmail.com" target="_blank">
+                            <a title='Mail' href="mailTo:ajay39in@gmail.com" target="_blank">
                                 <button class="event-buttons">Send E-mail</button>
                             </a>
                         </div>
@@ -243,15 +243,15 @@
         </div>
         <div class="row text-center row-centered" id="eventPhotosContainer">
             <div class="picsBox col-centered">
-                    <div class="row">
-                        <div class="coverpics"><img height='192' width='192' src="./assets/images/ALiAS.webp"></div>
-                    </div>
-                    <div class="row">
-                        <div class="picsText">Looking for photos...</div>
-                    </div>
-                    <div class="row">
-                        <div class="picsDate">Downloading...</div>
-                    </div>
+                <div class="row">
+                    <div class="coverpics"><img height='192' width='192' src="./assets/images/ALiAS.webp"></div>
+                </div>
+                <div class="row">
+                    <div class="picsText">Looking for photos...</div>
+                </div>
+                <div class="row">
+                    <div class="picsDate">Downloading...</div>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -334,22 +334,22 @@
     <div class="valign-wrapper container">
         <ul class="col-xs-12 contactLinksContainer text-left">
             <li class='col-xs-2'>
-                <a href="mailto:contactasetalias@gmail.com" target="_blank"><i class="fa icon-grey fa-envelope text-green"></i></a>
+                <a title='Mail' href="mailto:contactasetalias@gmail.com" target="_blank"><i class="fa icon-grey fa-envelope text-green"></i></a>
             </li>
             <li class='col-xs-2'>
-                <a href="https://github.com/asetalias" target="_blank"><i class="fa icon-grey fa-github text-grey"></i></a>
+                <a title='Source Code' href="https://github.com/asetalias" target="_blank"><i class="fa icon-grey fa-github text-grey"></i></a>
             </li>
             <li class='col-xs-2'>
-                <a href="https://www.youtube.com/channel/UCKkyqEMLFW3jz-q3nJIFL3g" target="_blank"><i class="fa icon-grey fa-youtube text-red"></i></a>
+                <a title='Youtube' href="https://www.youtube.com/channel/UCKkyqEMLFW3jz-q3nJIFL3g" target="_blank"><i class="fa icon-grey fa-youtube text-red"></i></a>
             </li>
             <li class='col-xs-2'>
-                <a href="https://www.facebook.com/asetalias/" target="_blank"><i class="fa icon-grey fa-facebook text-blue"></i></a>
+                <a title='Facebook' href="https://www.facebook.com/asetalias/" target="_blank"><i class="fa icon-grey fa-facebook text-blue"></i></a>
             </li>
             <li class='col-xs-2'>
-                <a href="https://groups.google.com/forum/#!forum/amity-linux-group" target="_blank"><i class="fa icon-grey fa-google-plus-square text-yellow"></i></a>
+                <a title='Mailing List' href="https://groups.google.com/forum/#!forum/amity-linux-group" target="_blank"><i class="fa icon-grey fa-google-plus-square text-yellow"></i></a>
             </li>
             <li class='col-xs-2'>
-                <a href="https://github.com/ATB00ker/asetalias.github.io" target="_blank"><i class="fa fa-code-fork" aria-hidden="true"></i></a>
+                <a title='Source repository' href="https://github.com/ATB00ker/asetalias.github.io" target="_blank"><i class="fa fa-code-fork" aria-hidden="true"></i></a>
             </li>
         </ul>
     </div>
@@ -375,6 +375,7 @@
     <!-- Slick Slider Script -->
     <script src="./assets/js/owl.carousel.min.js"></script>
     <script>
+        isOnline();
         //Owl initiate
         function initWebinarOwl() {
             webinarsListContainer.classList.add("owl-carousel");

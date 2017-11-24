@@ -13,13 +13,21 @@ nav .button-collapse i {
     height: 100%;
     line-height: 100%;
 }
+#settingsTray{
+    position: relative;
+    padding-bottom: 40px;
+    margin-top: 14px;
+    padding-right: 5px;
+    line-height: 24px;
+    vertical-align: middle;
+}
 #settingIcon {
+    height: 1px;
     text-align: right;
     font-size: 25px;
     float: right;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 10px;
     color: #000;
 }
 section .headerContainer {
@@ -83,15 +91,6 @@ section .headerContainer {
 }
 .container .row {
     margin: 0;
-}
-#settingsTray{
-    position: relative;
-    padding-bottom: 40px;
-    margin-top: 14px;
-    padding-right: 5px;
-    line-height: 24px;
-    margin-bottom: 20px;
-    vertical-align: middle;
 }
 #settingsPage {
     display: none;
