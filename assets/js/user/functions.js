@@ -20,7 +20,7 @@ function metaData() {
                     eventsList[outerCounter][innerCounter] = eventsCollection.snapshotItem(snapIternation++).nodeValue;
              }
             /*******************************************
-            Generating Response list for previousWebinars
+            Generating Response list for Webinars
             *******************************************/
             var webinarsCollection =  response.evaluate("//div[@id='sheets-viewport']/div[@id='90094189']//table[@class='waffle']/tbody/tr/td//text()",response,null,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,null);
             // Skip the first 10 entries and start the iteration.
