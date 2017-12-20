@@ -696,7 +696,15 @@ section .section-header{
 /** Common Styles End **/
 
 /** Webinars Section **/
+
+
+.webinarHeader{
+  padding: 5px 0;
+  color: #ffffff!important;
+
+}
 #webinars{
+
     background: url("../../images/bg-1080p-4.jpg");
     background-attachment: fixed;
     background-size: cover;
