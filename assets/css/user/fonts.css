@@ -42,6 +42,11 @@ p.description, .servicesList li{
     font-family: 'Pacifico', cursive;
     font-size: 20px;
 }
+#introTxt{
+  font-family:'Courier New';
+  font-weight: 200;
+
+}
 .youtubeVideoTitleContaier h2{
     font-family: 'Dosis', sans-serif;
     font-weight: 400;

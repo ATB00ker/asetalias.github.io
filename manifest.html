@@ -26,7 +26,7 @@
     <!-- Application Manifest -->
     <link rel="manifest" href="./manifest.json">
     <!-- Materialize Styles -->
-    <link href="./assets/css/materialize.min.css" rel="stylesheet" />
+    <link href="./assets/css/materialize.min.css" rel="stylesheet"  />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css" integrity="sha256-lJMsOpLg+Hdzs297wkRxAhSlJdXcuHHyo/JoB4uI7uw=" crossorigin="anonymous" /> -->
     <!-- Bootstrap Styles -->
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -88,7 +88,7 @@
 </section>
 
 <!-- Intro Section -->
-<section id="intro" class="intro-section">
+<section id="intro" class="intro-section" >
     <div class="container">
         <div class="row">
             <div class="col-centered col-lg-12 headerContainer">
@@ -102,12 +102,28 @@
         <div class="row  text-left siteAboutMore animated">
             <div class="siteAboutHistory col-sm-12">
                 <!-- This div contains "How the club came to be?" -->
+
                 <div class="section-header subheader">
-                    <span class="bottom-border bottom-border-danger"><i class="black-text fa fa-flag iconMed" aria-hidden="true"></i><span class="black-text heading">The Journey</span></span>
+                 <span class="bottom-border bottom-border-danger  center"><i class="black-text fa fa-flag iconMed" aria-hidden="true"></i><span class="black-text heading">The Journey</span></span>
                 </div>
-                <p id='introTxt'>
-                    Started back in 2010; With main aim to foster the growth of use of Linux for the developers in the campus and to promote the culture of hacking and sharing.<br>ALiAS is now a platform for upcoming developers for finding exposure by meeting the people working in related industries, learning various languages and becoming a better developer
+
+                <div id="cp"  class=" active card-panel red lighten-4 z-depth-1">
+
+                  <img class="responsive-img" src="assets/images/about us/amity.gif">
+
+                <p id='introTxt' >
+                    <strong> Started back in 2010 </strong> With main aim to foster the growth of use of Linux for the developers in the campus and to promote the culture of hacking and sharing.<br></p>
+                 </div>
+
+                  <div  id="cp" class="active  card-panel  purple lighten-4 ">
+                    <img class="responsive-img" src="assets/images/icons/152.png">
+                    <p id='introTxt'>
+                    <strong>ALiAS</strong> is now a platform for upcoming developers for finding exposure by meeting the people working in related industries, learning various languages and becoming a better developer.
                 </p>
+              </div>
+
+
+              </div>
             </div>
         </div>
     </div>
@@ -467,6 +483,8 @@
                 }).then(isHomePermitted());
             });
         }
+
+
     </script>
 </body>
 </html>
