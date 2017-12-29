@@ -775,6 +775,9 @@ section .section-header{
     background-attachment: fixed;
     color: #FFF;
     background-size: cover;
+    height: 100%;
+    overflow: hidden;
+    padding-bottom: 10%;
 }
 
 #FAQ .headerContainer{
@@ -782,7 +785,7 @@ section .section-header{
 }
 
 #FAQ .section-header{
-    color: #000;
+    color: #9d3737;
     font-size: 45px;
     background: transparent;
     box-shadow: 0 0 0;
@@ -793,8 +796,9 @@ section .section-header{
   color:black;
 }
 #ci{
-  position:relative;
-  left: 70%;
+  position:absolute;
+  right:5%;
+
 }
 
 /**FAQ section ends**/

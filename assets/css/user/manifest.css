@@ -83,13 +83,15 @@ section .headerContainer {
   box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
 
 }
-#FAQ{
+#FAQ {
   display: none;
   -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
   -moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
   box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
 
 }
+
+
 .siteAboutServices{
     padding-top: 32px;
     max-width: 570px;
