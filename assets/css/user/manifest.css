@@ -83,6 +83,15 @@ section .headerContainer {
   box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
 
 }
+#FAQ {
+  display: none;
+  -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+  -moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+  box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+
+}
+
+
 .siteAboutServices{
     padding-top: 32px;
     max-width: 570px;
@@ -121,6 +130,14 @@ section .headerContainer {
     padding-right: 10px;
     margin-top: 25px;
     margin-bottom: 10px;
+}
+#faq{
+  position:relative;
+  right:10%;
+}
+#faqi{
+  position:relative;
+  left:40%;
 }
 #notificationChannelForm {
     margin-left: 25px;

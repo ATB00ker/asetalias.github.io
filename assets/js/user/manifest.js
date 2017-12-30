@@ -5,6 +5,7 @@ function showHome() {
     document.getElementById('events').style.display = "none";
     document.getElementById('webinars').style.display = "none";
     document.getElementById('team').style.display = "none";
+    document.getElementById('FAQ').style.display = "none";
     document.getElementById('settingsPage').style.display = "none";
     $('button-collapse').sideNav('hide');
 }
@@ -15,6 +16,7 @@ function showAboutUs() {
     document.getElementById('events').style.display = "none";
     document.getElementById('webinars').style.display = "none";
     document.getElementById('team').style.display = "none";
+    document.getElementById('FAQ').style.display = "none";
     document.getElementById('settingsPage').style.display = "none";
     $('.button-collapse').sideNav('hide');
 }
@@ -25,6 +27,7 @@ function showJoinUs(){
     document.getElementById('events').style.display = "none";
     document.getElementById('webinars').style.display = "none";
     document.getElementById('team').style.display = "none";
+    document.getElementById('FAQ').style.display = "none";
     document.getElementById('settingsPage').style.display = "none";
     $('.button-collapse').sideNav('hide');
 }
@@ -35,6 +38,7 @@ function showEvents(){
     document.getElementById('events').style.display = "block";
     document.getElementById('webinars').style.display = "none";
     document.getElementById('team').style.display = "none";
+    document.getElementById('FAQ').style.display = "none";
     document.getElementById('settingsPage').style.display = "none";
     $('.button-collapse').sideNav('hide');
 }
@@ -45,6 +49,7 @@ function showWebinars(){
     document.getElementById('events').style.display = "none";
     document.getElementById('webinars').style.display = "block";
     document.getElementById('team').style.display = "none";
+    document.getElementById('FAQ').style.display = "none";
     document.getElementById('settingsPage').style.display = "none";
     $('.button-collapse').sideNav('hide');
 }
@@ -55,6 +60,18 @@ function showTeam(){
     document.getElementById('events').style.display = "none";
     document.getElementById('webinars').style.display = "none";
     document.getElementById('team').style.display = "block";
+    document.getElementById('FAQ').style.display = "none";
+    document.getElementById('settingsPage').style.display = "none";
+    $('.button-collapse').sideNav('hide');
+}
+function showFAQ(){
+    document.getElementById('home').style.display = "none";
+    document.getElementById('intro').style.display = "none";
+    document.getElementById('section_joinUs').style.display = "none";
+    document.getElementById('events').style.display = "none";
+    document.getElementById('webinars').style.display = "none";
+    document.getElementById('team').style.display = "none";
+    document.getElementById('FAQ').style.display = "block";
     document.getElementById('settingsPage').style.display = "none";
     $('.button-collapse').sideNav('hide');
 }
@@ -65,6 +82,7 @@ function showSettingsPage(){
     document.getElementById('events').style.display = "none";
     document.getElementById('webinars').style.display = "none";
     document.getElementById('team').style.display = "none";
+    document.getElementById('FAQ').style.display = "none";
     document.getElementById('settingsPage').style.display = "block";
     $('.button-collapse').sideNav('hide');
 }
