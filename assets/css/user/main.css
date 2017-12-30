@@ -783,9 +783,11 @@ section .section-header{
 #FAQ .headerContainer{
 	width: 100%;
 }
-
+#answer{
+  color: #FFF;
+}
 #FAQ .section-header{
-    color: #9d3737;
+    color: #FFF;
     font-size: 45px;
     background: transparent;
     box-shadow: 0 0 0;
