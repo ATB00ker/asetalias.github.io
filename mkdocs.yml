@@ -1,0 +1,5 @@
+site_name: ALiAS
+pages:
+    - Home: index.md
+    - Resources: resource_main.md
+theme: readthedocs
